@@ -1,0 +1,1005 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7025809135501833885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/WPN/sx_wpn_turret_shoot
+  m_EditorClassIdentifier: 
+  Path: event:/SX/WPN/sx_wpn_turret_shoot
+  Guid:
+    Data1: 1098625247
+    Data2: 1254476722
+    Data3: -1649037919
+    Data4: -601809912
+  Banks:
+  - {fileID: 1244513363176714464}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6861277945823137447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sx_resource.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/sx_resource.bank
+  Name: sx_resource
+  StudioPath: bank:/SX/sx_resource
+  lastModified: 637790559679732079
+  FileSizes:
+  - Name: Desktop
+    Value: 1488
+  Exists: 1
+--- !u!114 &-6534943483657998631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sx_plr_fps.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/sx_plr_fps.bank
+  Name: sx_plr_fps
+  StudioPath: bank:/SX/sx_plr_fps
+  lastModified: 637790559679722070
+  FileSizes:
+  - Name: Desktop
+    Value: 3328
+  Exists: 1
+--- !u!114 &-6045431959471349369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/INT/sx_int_resource_pickup
+  m_EditorClassIdentifier: 
+  Path: event:/SX/INT/sx_int_resource_pickup
+  Guid:
+    Data1: -1998900762
+    Data2: 1206894413
+    Data3: -1973540977
+    Data4: 2011127823
+  Banks:
+  - {fileID: -6861277945823137447}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5979526688296349567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/ENV/sx_env_turret_idle
+  m_EditorClassIdentifier: 
+  Path: event:/SX/ENV/sx_env_turret_idle
+  Guid:
+    Data1: 1539749309
+    Data2: 1339124669
+    Data3: 1764262811
+    Data4: 1845629794
+  Banks:
+  - {fileID: 1244513363176714464}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5919117112334842716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/PLR/sx_plr_fps_footstep
+  m_EditorClassIdentifier: 
+  Path: event:/SX/PLR/sx_plr_fps_footstep
+  Guid:
+    Data1: -571715095
+    Data2: 1154254264
+    Data3: -86294870
+    Data4: -1955159614
+  Banks:
+  - {fileID: -6534943483657998631}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5187309514225555719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/PLR/sx_plr_rts_ft_order_move
+  m_EditorClassIdentifier: 
+  Path: event:/SX/PLR/sx_plr_rts_ft_order_move
+  Guid:
+    Data1: -445985101
+    Data2: 1255712937
+    Data3: 959408826
+    Data4: -140333600
+  Banks:
+  - {fileID: -3214549059028660909}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5042309752284241461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/UI/sx_ui_select
+  m_EditorClassIdentifier: 
+  Path: event:/SX/UI/sx_ui_select
+  Guid:
+    Data1: 1077144591
+    Data2: 1245865242
+    Data3: 1874300331
+    Data4: -1440645180
+  Banks:
+  - {fileID: -2162082177860985053}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4959783436427528287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637790559679642000
+  FileSizes:
+  - Name: Desktop
+    Value: 4636
+  Exists: 1
+--- !u!114 &-3736825009157613129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sx_troop.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/sx_troop.bank
+  Name: sx_troop
+  StudioPath: bank:/SX/sx_troop
+  lastModified: 637790559679777120
+  FileSizes:
+  - Name: Desktop
+    Value: 4248
+  Exists: 1
+--- !u!114 &-3712793717311599939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/mx_menu.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/mx_menu.bank
+  Name: mx_menu
+  StudioPath: bank:/MX/mx_menu
+  lastModified: 637790559679677029
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &-3583943576817292776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/AMB/sx_amb_master
+  m_EditorClassIdentifier: 
+  Path: event:/SX/AMB/sx_amb_master
+  Guid:
+    Data1: 1988812560
+    Data2: 1143318975
+    Data3: -1343585606
+    Data4: -373778453
+  Banks:
+  - {fileID: 4581648641913088161}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3214549059028660909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sx_plr_rts.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/sx_plr_rts.bank
+  Name: sx_plr_rts
+  StudioPath: bank:/SX/sx_plr_rts
+  lastModified: 637790559679722070
+  FileSizes:
+  - Name: Desktop
+    Value: 3786
+  Exists: 1
+--- !u!114 &-2980152952215988654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/NPC/sx_npc_troop_footstep
+  m_EditorClassIdentifier: 
+  Path: event:/SX/NPC/sx_npc_troop_footstep
+  Guid:
+    Data1: -1858151341
+    Data2: 1244495355
+    Data3: -2004596812
+    Data4: -906690879
+  Banks:
+  - {fileID: -3736825009157613129}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2948100536435572581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/is_paused
+  m_EditorClassIdentifier: 
+  Name: is_paused
+  StudioPath: parameter:/is_paused
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1268875316
+    data2: 2024036839
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-2672291473727282238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/INT/sx_int_turret_pickup
+  m_EditorClassIdentifier: 
+  Path: event:/SX/INT/sx_int_turret_pickup
+  Guid:
+    Data1: 1502755234
+    Data2: 1212699875
+    Data3: 363959184
+    Data4: -1824704842
+  Banks:
+  - {fileID: 1244513363176714464}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2162082177860985053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sx_ui.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/sx_ui.bank
+  Name: sx_ui
+  StudioPath: bank:/SX/sx_ui
+  lastModified: 637790559679812148
+  FileSizes:
+  - Name: Desktop
+    Value: 3786
+  Exists: 1
+--- !u!114 &-747260590828643614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/NPC/sx_npc_troop_spawn
+  m_EditorClassIdentifier: 
+  Path: event:/SX/NPC/sx_npc_troop_spawn
+  Guid:
+    Data1: -1863518898
+    Data2: 1298509788
+    Data3: 1722005150
+    Data4: 379472632
+  Banks:
+  - {fileID: -3736825009157613129}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-433340773810239368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/ENV/sx_env_turret_death
+  m_EditorClassIdentifier: 
+  Path: event:/SX/ENV/sx_env_turret_death
+  Guid:
+    Data1: 1394756485
+    Data2: 1330490071
+    Data3: 1515847553
+    Data4: -1594990465
+  Banks:
+  - {fileID: 1244513363176714464}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-146631120159932481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/sfx_vol
+  m_EditorClassIdentifier: 
+  Name: sfx_vol
+  StudioPath: parameter:/Volume Sliders/sfx_vol
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 2450562924
+    data2: 2393715180
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 7516055746553466923}
+  - {fileID: -4959783436427528287}
+  - {fileID: -3712793717311599939}
+  - {fileID: 4581648641913088161}
+  - {fileID: -6534943483657998631}
+  - {fileID: -3214549059028660909}
+  - {fileID: -6861277945823137447}
+  - {fileID: -3736825009157613129}
+  - {fileID: 1244513363176714464}
+  - {fileID: -2162082177860985053}
+  EditorEvents:
+  - {fileID: -3583943576817292776}
+  - {fileID: 5049641383442047386}
+  - {fileID: 1469841908265802810}
+  - {fileID: -5919117112334842716}
+  - {fileID: 2041152956686388651}
+  - {fileID: 2425167049085923109}
+  - {fileID: 2463127461375727696}
+  - {fileID: 4732909471458924550}
+  - {fileID: -5187309514225555719}
+  - {fileID: -6045431959471349369}
+  - {fileID: 8043249500111987106}
+  - {fileID: -747260590828643614}
+  - {fileID: -2980152952215988654}
+  - {fileID: 1902702694377751477}
+  - {fileID: -433340773810239368}
+  - {fileID: -2672291473727282238}
+  - {fileID: 3605796180792046789}
+  - {fileID: -5979526688296349567}
+  - {fileID: -7025809135501833885}
+  - {fileID: -5042309752284241461}
+  - {fileID: 1272962905894208851}
+  - {fileID: 318653640668939316}
+  - {fileID: 1854980767655554778}
+  - {fileID: 2272904413663624330}
+  EditorParameters:
+  - {fileID: 7736975017144577247}
+  - {fileID: -2948100536435572581}
+  - {fileID: -146631120159932481}
+  - {fileID: 564564878072084197}
+  MasterBanks:
+  - {fileID: -4959783436427528287}
+  StringsBanks:
+  - {fileID: 7516055746553466923}
+  cacheTime: 637790559679812148
+  cacheVersion: 10
+--- !u!114 &318653640668939316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/UI/sx_ui_switch
+  m_EditorClassIdentifier: 
+  Path: event:/SX/UI/sx_ui_switch
+  Guid:
+    Data1: 1979563959
+    Data2: 1097790036
+    Data3: 206199739
+    Data4: 684809512
+  Banks:
+  - {fileID: -2162082177860985053}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &564564878072084197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/master_vol
+  m_EditorClassIdentifier: 
+  Name: master_vol
+  StudioPath: parameter:/Volume Sliders/master_vol
+  Min: 0
+  Max: 1
+  Default: 0.85
+  ID:
+    data1: 1971792308
+    data2: 3231617347
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &1244513363176714464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sx_turret.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/sx_turret.bank
+  Name: sx_turret
+  StudioPath: bank:/SX/sx_turret
+  lastModified: 637790559679777120
+  FileSizes:
+  - Name: Desktop
+    Value: 5168
+  Exists: 1
+--- !u!114 &1272962905894208851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/UI/sx_ui_hover
+  m_EditorClassIdentifier: 
+  Path: event:/SX/UI/sx_ui_hover
+  Guid:
+    Data1: -359729795
+    Data2: 1108284384
+    Data3: -2106658390
+    Data4: 2091248447
+  Banks:
+  - {fileID: -2162082177860985053}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1469841908265802810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/PLR/sx_plr_fps_land
+  m_EditorClassIdentifier: 
+  Path: event:/SX/PLR/sx_plr_fps_land
+  Guid:
+    Data1: 1987378483
+    Data2: 1241035846
+    Data3: 955919522
+    Data4: -454732192
+  Banks:
+  - {fileID: -6534943483657998631}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1854980767655554778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/UI/sx_ui_enemy_capture
+  m_EditorClassIdentifier: 
+  Path: event:/SX/UI/sx_ui_enemy_capture
+  Guid:
+    Data1: -983578679
+    Data2: 1237036296
+    Data3: -1172710728
+    Data4: 764273800
+  Banks:
+  - {fileID: -2162082177860985053}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1902702694377751477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/WPN/sx_wpn_troop_shoot
+  m_EditorClassIdentifier: 
+  Path: event:/SX/WPN/sx_wpn_troop_shoot
+  Guid:
+    Data1: 706056684
+    Data2: 1150793503
+    Data3: -132467069
+    Data4: -805215226
+  Banks:
+  - {fileID: -3736825009157613129}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2041152956686388651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/PLR/sx_plr_rts_ft_order_attack
+  m_EditorClassIdentifier: 
+  Path: event:/SX/PLR/sx_plr_rts_ft_order_attack
+  Guid:
+    Data1: 1981777773
+    Data2: 1335371987
+    Data3: -1446434407
+    Data4: -80149813
+  Banks:
+  - {fileID: -3214549059028660909}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2272904413663624330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/UI/sx_ui_capture
+  m_EditorClassIdentifier: 
+  Path: event:/SX/UI/sx_ui_capture
+  Guid:
+    Data1: -873173541
+    Data2: 1212213014
+    Data3: 1132851874
+    Data4: 1004856718
+  Banks:
+  - {fileID: -2162082177860985053}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2425167049085923109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/PLR/sx_plr_rts_turret_build
+  m_EditorClassIdentifier: 
+  Path: event:/SX/PLR/sx_plr_rts_turret_build
+  Guid:
+    Data1: 2089167733
+    Data2: 1130873800
+    Data3: 744087469
+    Data4: -662525994
+  Banks:
+  - {fileID: -3214549059028660909}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2463127461375727696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/PLR/sx_plr_rts_waypoint_place
+  m_EditorClassIdentifier: 
+  Path: event:/SX/PLR/sx_plr_rts_waypoint_place
+  Guid:
+    Data1: 1861847940
+    Data2: 1090660172
+    Data3: 2024755330
+    Data4: -156253048
+  Banks:
+  - {fileID: -3214549059028660909}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3605796180792046789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/INT/sx_int_turret_place
+  m_EditorClassIdentifier: 
+  Path: event:/SX/INT/sx_int_turret_place
+  Guid:
+    Data1: -75902797
+    Data2: 1337462111
+    Data3: -1656290643
+    Data4: -590400415
+  Banks:
+  - {fileID: 1244513363176714464}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4581648641913088161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sx_amb.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/sx_amb.bank
+  Name: sx_amb
+  StudioPath: bank:/SX/sx_amb
+  lastModified: 637790559679717066
+  FileSizes:
+  - Name: Desktop
+    Value: 1202
+  Exists: 1
+--- !u!114 &4732909471458924550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/PLR/sx_plr_rts_ft_select
+  m_EditorClassIdentifier: 
+  Path: event:/SX/PLR/sx_plr_rts_ft_select
+  Guid:
+    Data1: 478244521
+    Data2: 1152469076
+    Data3: 576830363
+    Data4: 657607202
+  Banks:
+  - {fileID: -3214549059028660909}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5049641383442047386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/PLR/sx_plr_fps_jump
+  m_EditorClassIdentifier: 
+  Path: event:/SX/PLR/sx_plr_fps_jump
+  Guid:
+    Data1: -46402814
+    Data2: 1187333053
+    Data3: 1532170399
+    Data4: 1695590967
+  Banks:
+  - {fileID: -6534943483657998631}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7516055746553466923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637790559679647001
+  FileSizes:
+  - Name: Desktop
+    Value: 2908
+  Exists: 1
+--- !u!114 &7736975017144577247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_vol
+  m_EditorClassIdentifier: 
+  Name: music_vol
+  StudioPath: parameter:/Volume Sliders/music_vol
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 2805676746
+    data2: 2597791536
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &8043249500111987106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SX/NPC/sx_npc_troop_death
+  m_EditorClassIdentifier: 
+  Path: event:/SX/NPC/sx_npc_troop_death
+  Guid:
+    Data1: 1881820956
+    Data2: 1105681743
+    Data3: -1036040790
+    Data4: -785663039
+  Banks:
+  - {fileID: -3736825009157613129}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
