@@ -95,9 +95,9 @@ public class FirstPersonPlayerController : PlayerControlType
             m_playerData.Motor.Move(moveAxis, jump);
         }
 
-        m_carryObject.UpdateCarrying(m_cameraTransform.forward);
+        m_carryObject.UpdateCarrying(m_cameraTransform.forward, m_cameraTransform.position);
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
         {
             if (m_carryObject.IsCarrying)
             {

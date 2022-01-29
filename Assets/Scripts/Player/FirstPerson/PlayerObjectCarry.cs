@@ -15,21 +15,21 @@ public class PlayerObjectCarry : MonoBehaviour
 
     CarriableObject m_carriedObject = null;
 
-    Vector3 m_initialOffset;
+    //Vector3 m_initialOffset;
 
     public bool IsCarrying
     {
         get => m_carriedObject;
     }
 
-    public void UpdateCarrying(Vector3 a_forwardDir)
+    public void UpdateCarrying(Vector3 a_forwardDir, Vector3 a_position)
     {
         if (!m_carriedObject)
         {
             return;
         }
 
-        Vector3 newPosition = transform.position + (a_forwardDir * rayCheckDistance) + m_initialOffset;
+        Vector3 newPosition = a_position + (a_forwardDir * rayCheckDistance);// + m_initialOffset;
 
         m_carriedObject.DesiredPosition = newPosition;
     }
@@ -55,13 +55,13 @@ public class PlayerObjectCarry : MonoBehaviour
             m_carriedObject = hitCarriable;
             hitCarriable.OnPickedUp();
 
-            Vector3 carriedObjectVector = m_carriedObject.transform.position - transform.position;
+            //Vector3 carriedObjectVector = m_carriedObject.transform.position - transform.position;
 
-            Vector3 extendedPosition =
-                (rayCheckDistance - carriedObjectVector.magnitude) * carriedObjectVector.normalized +
-                m_carriedObject.transform.position;
+            //Vector3 extendedPosition =
+            //    (rayCheckDistance - carriedObjectVector.magnitude) * carriedObjectVector.normalized +
+            //    m_carriedObject.transform.position;
 
-            m_initialOffset = extendedPosition - (a_direction * rayCheckDistance + transform.position);
+            //m_initialOffset = extendedPosition - (a_direction * rayCheckDistance + transform.position);
         }
     }
 
