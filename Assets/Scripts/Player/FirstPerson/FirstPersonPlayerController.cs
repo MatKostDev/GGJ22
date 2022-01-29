@@ -27,12 +27,14 @@ public class FirstPersonPlayerController : PlayerControlType
     float m_currentFrameMouseX;
     float m_currentFrameMouseY;
 
-    Transform                m_cameraTransform;
-    PlayerRotationController m_rotationController;
+    Transform         m_cameraTransform;
+    PlayerObjectCarry m_carryObject;
 
-    FirstPersonPlayerData m_firstPersonPlayerData;
+    FirstPersonPlayerData m_playerData;
 
     CinemachineVirtualCamera m_vCam;
+
+    Vector3 m_lastFramePosition;
 
     bool m_canMove = true;
 
@@ -60,10 +62,12 @@ public class FirstPersonPlayerController : PlayerControlType
 
     void Awake()
     {
-        m_firstPersonPlayerData = FirstPersonPlayerData.Instance;
+        m_playerData = FirstPersonPlayerData.Instance;
 
-        m_cameraTransform    = m_firstPersonPlayerData.PlayerCamera.transform;
-        m_rotationController = m_firstPersonPlayerData.RotationController;
+        m_cameraTransform = m_playerData.PlayerCamera.transform;
+        m_carryObject     = m_playerData.ObjectCarry;
+
+        m_lastFramePosition = transform.position;
     }
 
     public override void OnUpdate()
@@ -77,7 +81,7 @@ public class FirstPersonPlayerController : PlayerControlType
         Vector2 lookAxis = new Vector2(m_currentFrameMouseX, m_currentFrameMouseY);
         lookAxis *= mouseSens;
 
-        m_firstPersonPlayerData.RotationController.UpdateRotations(lookAxis);
+        m_playerData.RotationController.UpdateRotations(lookAxis);
 
         //movement
         if (m_canMove)
@@ -88,20 +92,42 @@ public class FirstPersonPlayerController : PlayerControlType
                 moveAxis = moveAxis.normalized;
             }
 
-            m_firstPersonPlayerData.Motor.Move(moveAxis, jump);
+            m_playerData.Motor.Move(moveAxis, jump);
+        }
+
+        m_carryObject.UpdateCarrying(transform.position - m_lastFramePosition);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (m_carryObject.IsCarrying)
+            {
+                m_carryObject.TryDropCarriedObject();
+            }
+            else
+            {
+                m_carryObject.PerformRayCheck(m_cameraTransform.position, m_cameraTransform.forward);
+            }
+        }
+        else if (!m_carryObject.IsCarrying)
+        {
+            m_carryObject.PerformRayCheck(m_cameraTransform.position, m_cameraTransform.forward, false);
         }
 
         CheckDeathPlane();
+
+        m_lastFramePosition = transform.position;
     }
 
     public override void OnSwappedTo()
     {
-        m_firstPersonPlayerData.VCamera.Priority = 1;
+        m_playerData.VCamera.Priority = 1;
+
+        m_lastFramePosition = transform.position;
     }
 
     public override void OnSwappedFrom()
     {
-        m_firstPersonPlayerData.VCamera.Priority = 0;
+        m_playerData.VCamera.Priority = 0;
     }
 
     void CheckDeathPlane()
@@ -117,6 +143,8 @@ public class FirstPersonPlayerController : PlayerControlType
         newPosition.y = respawnHeight;
 
         motor.Teleport(newPosition);
+
+        m_lastFramePosition = transform.position;
     }
 
     public void UpdateMouseSens(float a_newSens)

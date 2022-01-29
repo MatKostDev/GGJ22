@@ -16,6 +16,9 @@ public class FirstPersonPlayerData : Singleton<FirstPersonPlayerData>
     PlayerRotationController rotationController;
 
     [SerializeField]
+    PlayerObjectCarry objectCarry;
+
+    [SerializeField]
     CinemachineVirtualCamera vCamera;
 
     [SerializeField]
@@ -44,6 +47,11 @@ public class FirstPersonPlayerData : Singleton<FirstPersonPlayerData>
     public PlayerRotationController RotationController
     {
         get => rotationController;
+    }
+
+    public PlayerObjectCarry ObjectCarry
+    {
+        get => objectCarry;
     }
 
     public CinemachineVirtualCamera VCamera
