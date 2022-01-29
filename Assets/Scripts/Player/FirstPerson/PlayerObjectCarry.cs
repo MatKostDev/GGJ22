@@ -53,7 +53,15 @@ public class PlayerObjectCarry : MonoBehaviour
 
     public void TryDropCarriedObject()
     {
+        CarriableObject carried = m_carriedObject.GetComponent<CarriableObject>();
+        if (!carried || !carried.CanBePlaced)
+        {
+            return;
+        }
+
         m_carriedObject.position -= Vector3.up * CARRIED_HEIGHT_OFFSET;
+
+        m_carriedObject.GetComponent<CarriableObject>().OnPlacedDown();
 
         m_carriedObject = null;
     }
