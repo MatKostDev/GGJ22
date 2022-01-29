@@ -1,7 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
-public class PlayerData : Singleton<PlayerData>
+public class FirstPersonPlayerData : Singleton<FirstPersonPlayerData>
 {
     [SerializeField]
     Transform bodyTransform;
