@@ -42,6 +42,8 @@ public class PlayerObjectCarry : MonoBehaviour
             return;
         }
 
+        hitCarriable.OnHover();
+
         if (a_pickUpIfValid)
         {
             rayHit.transform.position += Vector3.up * CARRIED_HEIGHT_OFFSET;
