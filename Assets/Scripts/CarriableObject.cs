@@ -10,6 +10,15 @@ public class CarriableObject : MonoBehaviour
     [SerializeField]
     Color invalidColor = Color.red;
 
+    [SerializeField]
+    float moveSpeed = 25f;
+
+    [SerializeField]
+    Transform boxcastPoint;
+
+    [SerializeField]
+    Vector3 boxcastSize;
+
     Collider m_collider;
 
     bool m_canBePlaced = false;
@@ -18,6 +27,14 @@ public class CarriableObject : MonoBehaviour
     Outline m_outline;
 
     bool m_showOutline = false;
+
+    Vector3 m_desiredPosition;
+
+    public Vector3 DesiredPosition
+    {
+        get => m_desiredPosition;
+        set => m_desiredPosition = value;
+    }
 
     public bool CanBePlaced
     {
@@ -30,10 +47,14 @@ public class CarriableObject : MonoBehaviour
         m_outline  = GetComponent<Outline>();
 
         m_outline.enabled = false;
+
+        m_desiredPosition = transform.position;
     }
 
     void Update()
     {
+        transform.position = Vector3.Lerp(transform.position, m_desiredPosition, moveSpeed * Time.deltaTime);
+
         if (m_showOutline || m_isCarried)
         {
             m_outline.enabled = true;
@@ -62,6 +83,8 @@ public class CarriableObject : MonoBehaviour
         m_outline.OutlineColor = validColor;
 
         m_isCarried = true;
+
+        m_desiredPosition = transform.position;
     }
 
     public void OnPlacedDown()
@@ -69,6 +92,13 @@ public class CarriableObject : MonoBehaviour
         m_collider.isTrigger = false;
 
         m_isCarried = false;
+
+        m_desiredPosition = transform.position;
+
+        if (Physics.BoxCast(boxcastPoint.position, boxcastSize, Vector3.down, out var castHit, Quaternion.identity))
+        {
+            m_desiredPosition.y = castHit.point.y + boxcastSize.y;
+        }
     }
 
     void OnTriggerEnter(Collider a_other)

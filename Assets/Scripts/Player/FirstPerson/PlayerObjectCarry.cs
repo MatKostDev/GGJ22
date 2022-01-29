@@ -13,21 +13,25 @@ public class PlayerObjectCarry : MonoBehaviour
 
     const float CARRIED_HEIGHT_OFFSET = 0.1f;
 
-    Transform m_carriedObject = null;
+    CarriableObject m_carriedObject = null;
+
+    Vector3 m_initialOffset;
 
     public bool IsCarrying
     {
         get => m_carriedObject;
     }
 
-    public void UpdateCarrying(Vector3 a_deltaPosition)
+    public void UpdateCarrying(Vector3 a_forwardDir)
     {
         if (!m_carriedObject)
         {
             return;
         }
 
-        m_carriedObject.position += a_deltaPosition;
+        Vector3 newPosition = transform.position + (a_forwardDir * rayCheckDistance) + m_initialOffset;
+
+        m_carriedObject.DesiredPosition = newPosition;
     }
 
     public void PerformRayCheck(Vector3 a_position, Vector3 a_direction, bool a_pickUpIfValid = true)
@@ -48,20 +52,25 @@ public class PlayerObjectCarry : MonoBehaviour
         {
             rayHit.transform.position += Vector3.up * CARRIED_HEIGHT_OFFSET;
 
-            m_carriedObject = rayHit.transform;
+            m_carriedObject = hitCarriable;
             hitCarriable.OnPickedUp();
+
+            Vector3 carriedObjectVector = m_carriedObject.transform.position - transform.position;
+
+            Vector3 extendedPosition =
+                (rayCheckDistance - carriedObjectVector.magnitude) * carriedObjectVector.normalized +
+                m_carriedObject.transform.position;
+
+            m_initialOffset = extendedPosition - (a_direction * rayCheckDistance + transform.position);
         }
     }
 
     public void TryDropCarriedObject()
     {
-        CarriableObject carried = m_carriedObject.GetComponent<CarriableObject>();
-        if (!carried || !carried.CanBePlaced)
+        if (!m_carriedObject || !m_carriedObject.CanBePlaced)
         {
             return;
         }
-
-        m_carriedObject.position -= Vector3.up * CARRIED_HEIGHT_OFFSET;
 
         m_carriedObject.GetComponent<CarriableObject>().OnPlacedDown();
 
