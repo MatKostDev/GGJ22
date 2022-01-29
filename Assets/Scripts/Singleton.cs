@@ -26,11 +26,6 @@ public abstract class Singleton<TBehaviour> : MonoBehaviour
         }
     }
 
-    protected virtual void Awake()
-    {
-        s_instance = this as TBehaviour;
-    }
-
     protected virtual void OnDestroy()
     {
         if (s_instance == this)
