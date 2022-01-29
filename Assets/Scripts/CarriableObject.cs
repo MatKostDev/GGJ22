@@ -120,7 +120,5 @@ public class CarriableObject : MonoBehaviour
         m_canBePlaced = true;
 
         m_outline.OutlineColor = validColor;
-
-        Debug.Log("aaa");
     }
 }
