@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class FirstPersonPlayerController : PlayerControlType
 {
     [Header("Death Plane / Respawn")]
     [SerializeField]
@@ -29,9 +30,9 @@ public class PlayerController : MonoBehaviour
     Transform                m_cameraTransform;
     PlayerRotationController m_rotationController;
 
-    PlayerData m_playerData;
+    FirstPersonPlayerData m_firstPersonPlayerData;
 
-    bool m_isPaused = false;
+    CinemachineVirtualCamera m_vCam;
 
     bool m_canMove = true;
 
@@ -59,34 +60,14 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        m_playerData = PlayerData.Instance;
+        m_firstPersonPlayerData = FirstPersonPlayerData.Instance;
 
-        m_cameraTransform    = m_playerData.PlayerCamera.transform;
-        m_rotationController = m_playerData.RotationController;
-
-        LockCursor();
+        m_cameraTransform    = m_firstPersonPlayerData.PlayerCamera.transform;
+        m_rotationController = m_firstPersonPlayerData.RotationController;
     }
 
-    void Update()
+    public override void OnUpdate()
     {
-        if (m_isPaused)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                m_isPaused = false;
-                LockCursor();
-                Time.timeScale = 1f;
-            }
-
-            return;
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            m_isPaused = true;
-            UnlockCursor();
-            Time.timeScale = 0f;
-        }
-
         bool jump = Input.GetButtonDown("Jump");
 
         //rotation
@@ -96,7 +77,7 @@ public class PlayerController : MonoBehaviour
         Vector2 lookAxis = new Vector2(m_currentFrameMouseX, m_currentFrameMouseY);
         lookAxis *= mouseSens;
 
-        m_playerData.RotationController.UpdateRotations(lookAxis);
+        m_firstPersonPlayerData.RotationController.UpdateRotations(lookAxis);
 
         //movement
         if (m_canMove)
@@ -107,10 +88,20 @@ public class PlayerController : MonoBehaviour
                 moveAxis = moveAxis.normalized;
             }
 
-            m_playerData.Motor.Move(moveAxis, jump);
+            m_firstPersonPlayerData.Motor.Move(moveAxis, jump);
         }
 
         CheckDeathPlane();
+    }
+
+    public override void OnSwappedTo()
+    {
+        m_firstPersonPlayerData.VCamera.Priority = 1;
+    }
+
+    public override void OnSwappedFrom()
+    {
+        m_firstPersonPlayerData.VCamera.Priority = 0;
     }
 
     void CheckDeathPlane()
@@ -120,7 +111,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        var motor = PlayerData.Instance.Motor;
+        var motor = FirstPersonPlayerData.Instance.Motor;
 
         Vector3 newPosition = motor.transform.position;
         newPosition.y = respawnHeight;
@@ -131,17 +122,5 @@ public class PlayerController : MonoBehaviour
     public void UpdateMouseSens(float a_newSens)
     {
         mouseSens = a_newSens;
-    }
-
-    public void LockCursor()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible   = false;
-    }
-
-    public void UnlockCursor()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible   = true;
     }
 }
