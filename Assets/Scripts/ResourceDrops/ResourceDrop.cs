@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,16 +7,20 @@ public class ResourceDrop : MonoBehaviour
 {
     public UnityEvent onCollected = new UnityEvent();
 
-    const float MAX_SPEED = 5f;
+    const float MAX_SPEED = 3.5f;
     const float FLY_SPEED = 15f;
 
-    Rigidbody m_rigidbody;
+    Rigidbody    m_rigidbody;
+    MeshRenderer m_meshRenderer;
 
     bool m_isFlyingToPlayer = false;
 
+    float m_lifeTime = 30f;
+
     void Awake()
     {
-        m_rigidbody = GetComponent<Rigidbody>();
+        m_rigidbody    = GetComponent<Rigidbody>();
+        m_meshRenderer = GetComponent<MeshRenderer>();
     }
 
     void Update()
@@ -26,6 +29,37 @@ public class ResourceDrop : MonoBehaviour
         {
             m_rigidbody.velocity = m_rigidbody.velocity.normalized * MAX_SPEED;
         }
+
+        UpdateLifetime();
+    }
+
+    public void UpdateLifetime()
+    {
+        if (m_isFlyingToPlayer)
+        {
+            Color newColor = m_meshRenderer.material.color;
+            newColor.a = 1f;
+
+            m_meshRenderer.material.color = newColor;
+
+            return;
+        }
+
+        if (m_lifeTime < 0f)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if (m_lifeTime < 5f)
+        {
+            Color newColor = m_meshRenderer.material.color;
+            newColor.a = Mathf.Clamp(Mathf.Sin(m_lifeTime * 5f) + 0.8f, 0f, 1f);
+
+            m_meshRenderer.material.color = newColor;
+        }
+
+        m_lifeTime -= Time.deltaTime;
     }
 
     public void OnEmitted()
