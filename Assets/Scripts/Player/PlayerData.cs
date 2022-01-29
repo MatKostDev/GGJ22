@@ -10,7 +10,7 @@ public class PlayerData : Singleton<PlayerData>
     PlayerMotor motor;
 
     [SerializeField]
-    PlayerController controller;
+    FirstPersonPlayerController controller;
 
     [SerializeField]
     PlayerRotationController rotationController;
@@ -36,7 +36,7 @@ public class PlayerData : Singleton<PlayerData>
         get => motor;
     }
 
-    public PlayerController Controller
+    public FirstPersonPlayerController Controller
     {
         get => controller;
     }
