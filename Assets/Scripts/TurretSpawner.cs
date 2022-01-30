@@ -24,7 +24,6 @@ public class TurretSpawner : Singleton<TurretSpawner>
     public void RespawnExistingTurret(Transform a_moveTarget)
     {
         a_moveTarget.position = GetSpawnPosition();
-        Debug.Log(a_moveTarget.position);
     }
 
     public void SpawnTurret()

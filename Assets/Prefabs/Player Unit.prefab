@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 879719406150081575}
   - component: {fileID: 879719406150081572}
   - component: {fileID: 3397260365881631936}
+  - component: {fileID: 4408348403420542781}
   m_Layer: 18
   m_Name: Player Unit
   m_TagString: Unit
@@ -272,6 +273,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4408348403420542781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879719406150081599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b03938fdd6700144832922cee901a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 1
 --- !u!1 &879719406159409935
 GameObject:
   m_ObjectHideFlags: 0
