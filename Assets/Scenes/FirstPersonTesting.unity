@@ -7191,16 +7191,16 @@ MonoBehaviour:
   onJumped:
     m_PersistentCalls:
       m_Calls: []
-  maxSpeedMultiple: 2.5
+  maxSpeedMultiple: 2
   momentumShiftWhenTurningFactor: 0.85
   groundAccelerationRate: 160
   groundDecelerationRate: 60
   groundFrictionStrength: 1.3
-  groundTargetMovementSpeed: 9
+  groundTargetMovementSpeed: 11
   airAccelerationRate: 100
   airDecelerationRate: 20
   airFrictionStrength: 0.02
-  airTargetMovementSpeed: 9
+  airTargetMovementSpeed: 10.5
   jumpHeight: 2.3
   gravityStrength: 40
   terminalDownVelocity: -60

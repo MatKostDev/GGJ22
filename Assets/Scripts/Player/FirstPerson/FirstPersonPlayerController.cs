@@ -97,7 +97,7 @@ public class FirstPersonPlayerController : PlayerControlType
                 //this is jank but ye
                 jump = true;
             }
-            else
+            else if (!m_carryObject.IsCarrying)
             {
                 m_grappleHook.FireGrapple(m_cameraTransform.position, m_cameraTransform.forward);
             }

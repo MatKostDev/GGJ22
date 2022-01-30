@@ -434,6 +434,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - mx_gameplay
   - mx_menu
   - sx_amb
   - sx_plr_fps
