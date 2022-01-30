@@ -123,11 +123,15 @@ public class FirstPersonPlayerController : PlayerControlType
         m_playerData.VCamera.Priority = 1;
 
         m_lastFramePosition = transform.position;
+
+        m_playerData.CanvasFpp.SetActive(true);
     }
 
     public override void OnSwappedFrom()
     {
         m_playerData.VCamera.Priority = 0;
+
+        m_playerData.CanvasFpp.SetActive(false);
     }
 
     void CheckDeathPlane()
