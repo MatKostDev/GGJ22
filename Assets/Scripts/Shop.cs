@@ -35,10 +35,13 @@ public class Shop : MonoBehaviour
     float m_turretTimer;
     float m_unitTimer;
 
+    [Header("References")]
+    [SerializeField] SquadSpawner squadSpawner = null;
+
     void Awake()
     {
         turretsCostText.text = turretsCost.ToString();
-        unitsCostText.text   = unitsCost.ToString();
+        unitsCostText.text = unitsCost.ToString();
 
         m_resourceManager = ResourceManager.Instance;
     }
@@ -46,10 +49,10 @@ public class Shop : MonoBehaviour
     void Update()
     {
         m_turretTimer = Mathf.Max(0f, m_turretTimer - Time.deltaTime);
-        m_unitTimer   = Mathf.Max(0f, m_unitTimer   - Time.deltaTime);
+        m_unitTimer = Mathf.Max(0f, m_unitTimer - Time.deltaTime);
 
         turretCooldownImage.fillAmount = m_turretTimer / turretCooldown;
-        unitCooldownImage.fillAmount   = m_unitTimer   / unitCooldown;
+        unitCooldownImage.fillAmount = m_unitTimer / unitCooldown;
     }
 
     public void TryBuyTurret()
@@ -75,7 +78,7 @@ public class Shop : MonoBehaviour
         }
 
         m_resourceManager.SpendResources(unitsCost);
-
+        squadSpawner.SpawnSquad();
         m_unitTimer = unitCooldown;
 
         unitCooldownImage.fillAmount = 1f;
