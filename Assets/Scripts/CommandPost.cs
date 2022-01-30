@@ -92,7 +92,7 @@ public class CommandPost : MonoBehaviour
             }
         }
 
-        if (isEndGoal)
+        if (isEndGoal && a_playEvent)
         {
             Invoke(nameof(LoadMainMenu), 1f);
         }
