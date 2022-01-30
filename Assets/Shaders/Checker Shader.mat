@@ -47,10 +47,10 @@ Material:
     - _PlusLength: 0.1
     - _PlusSymbol: 0
     - _PlusWidth: 0.01
-    - _PulsingRate: 1
+    - _PulsingRate: 1.5
     - _ScrollSpeed: 0.5
     - _ScrollingGrid: 0
-    - _Tiling: 0.5
+    - _Tiling: 0.25
     m_Colors:
     - Color_2e3321af64204a58976fe061beceb2f3: {r: 0, g: 0.037819732, b: 0.98039216, a: 0}
     - Color_c399e9c41660448ba26351c9b4c44020: {r: 0, g: 0, b: 0, a: 1}
