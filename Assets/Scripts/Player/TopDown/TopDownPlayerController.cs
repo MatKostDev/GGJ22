@@ -37,7 +37,7 @@ public class TopDownPlayerController : PlayerControlType
     void MoveUnit()
     {
         var unit = unitPanel.GetSelectedUnit();
-        if (!Input.GetMouseButtonDown(1) || unit.CompareTag("EUnit") || !unit.CanMove())
+        if (!Input.GetMouseButtonDown(1) || !unit || unit.CompareTag("EUnit") || !unit.CanMove())
             return;
 
         var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
