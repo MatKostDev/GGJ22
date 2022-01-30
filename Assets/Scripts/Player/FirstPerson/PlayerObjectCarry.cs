@@ -50,7 +50,7 @@ public class PlayerObjectCarry : MonoBehaviour
 
         if (a_pickUpIfValid)
         {
-            rayHit.transform.position += Vector3.up * CARRIED_HEIGHT_OFFSET;
+            hitCarriable.MoveTarget.position += Vector3.up * CARRIED_HEIGHT_OFFSET;
 
             m_carriedObject = hitCarriable;
             hitCarriable.OnPickedUp();
