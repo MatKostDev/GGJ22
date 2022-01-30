@@ -21,9 +21,20 @@ public class Unit : MonoBehaviour
         agent.SetDestination(dest);
     }
 
+
     public bool CanMove()
     {
         return canMove;
+    }
+
+    public void OnDie()
+    {
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(0.75f);
+            Destroy(gameObject);
+        }
+        StartCoroutine(Wait());
     }
 
 }

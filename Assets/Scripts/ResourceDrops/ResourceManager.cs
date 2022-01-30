@@ -5,7 +5,7 @@ public class ResourceManager : Singleton<ResourceManager>
 {
     TMP_Text m_resourceText;
 
-    int m_currentAmount = 0;
+    int m_currentAmount = 10;
 
     public int CurrentAmount
     {
