@@ -13,21 +13,33 @@ public class PlayerObjectCarry : MonoBehaviour
 
     const float CARRIED_HEIGHT_OFFSET = 0.1f;
 
-    Transform m_carriedObject = null;
+    CarriableObject m_carriedObject = null;
+
+    //Vector3 m_initialOffset;
+
+    bool m_isCarryingPaused = false;
 
     public bool IsCarrying
     {
         get => m_carriedObject;
     }
 
-    public void UpdateCarrying(Vector3 a_deltaPosition)
+    public bool IsCarryingPaused
     {
-        if (!m_carriedObject)
+        get => m_isCarryingPaused;
+        set => m_isCarryingPaused = value;
+    }
+
+    public void UpdateCarrying(Vector3 a_forwardDir, Vector3 a_position)
+    {
+        if (!m_carriedObject || m_isCarryingPaused)
         {
             return;
         }
 
-        m_carriedObject.position += a_deltaPosition;
+        Vector3 newPosition = a_position + (a_forwardDir * rayCheckDistance);// + m_initialOffset;
+
+        m_carriedObject.DesiredPosition = newPosition;
     }
 
     public void PerformRayCheck(Vector3 a_position, Vector3 a_direction, bool a_pickUpIfValid = true)
@@ -42,18 +54,33 @@ public class PlayerObjectCarry : MonoBehaviour
             return;
         }
 
+        hitCarriable.OnHover();
+
         if (a_pickUpIfValid)
         {
-            rayHit.transform.position += Vector3.up * CARRIED_HEIGHT_OFFSET;
+            hitCarriable.MoveTarget.position += Vector3.up * CARRIED_HEIGHT_OFFSET;
 
-            m_carriedObject = rayHit.transform;
+            m_carriedObject = hitCarriable;
             hitCarriable.OnPickedUp();
+
+            //Vector3 carriedObjectVector = m_carriedObject.transform.position - transform.position;
+
+            //Vector3 extendedPosition =
+            //    (rayCheckDistance - carriedObjectVector.magnitude) * carriedObjectVector.normalized +
+            //    m_carriedObject.transform.position;
+
+            //m_initialOffset = extendedPosition - (a_direction * rayCheckDistance + transform.position);
         }
     }
 
     public void TryDropCarriedObject()
     {
-        m_carriedObject.position -= Vector3.up * CARRIED_HEIGHT_OFFSET;
+        if (!m_carriedObject || !m_carriedObject.CanBePlaced)
+        {
+            return;
+        }
+
+        m_carriedObject.GetComponent<CarriableObject>().OnPlacedDown();
 
         m_carriedObject = null;
     }

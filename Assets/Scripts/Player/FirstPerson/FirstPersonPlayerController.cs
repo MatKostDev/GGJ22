@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class FirstPersonPlayerController : PlayerControlType
 {
+    public UnityEvent onSwappedTo   = new UnityEvent();
+    public UnityEvent onSwappedFrom = new UnityEvent();
+
     [Header("Death Plane / Respawn")]
     [SerializeField]
     [Tooltip("Just for sanity, but the player shouldn't be able to fall below the map")]
     float deathPlaneHeight = -50f;
-
-    [SerializeField]
-    float respawnHeight = 4f;
 
     [Header("Mouse Sens")]
     [SerializeField]
@@ -35,6 +36,8 @@ public class FirstPersonPlayerController : PlayerControlType
     CinemachineVirtualCamera m_vCam;
 
     Vector3 m_lastFramePosition;
+
+    Vector3 m_spawnPosition;
 
     bool m_canMove = true;
 
@@ -68,6 +71,8 @@ public class FirstPersonPlayerController : PlayerControlType
         m_carryObject     = m_playerData.ObjectCarry;
 
         m_lastFramePosition = transform.position;
+
+        m_spawnPosition = transform.position;
     }
 
     public override void OnUpdate()
@@ -95,9 +100,9 @@ public class FirstPersonPlayerController : PlayerControlType
             m_playerData.Motor.Move(moveAxis, jump);
         }
 
-        m_carryObject.UpdateCarrying(transform.position - m_lastFramePosition);
+        m_carryObject.UpdateCarrying(m_cameraTransform.forward, m_cameraTransform.position);
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
         {
             if (m_carryObject.IsCarrying)
             {
@@ -123,11 +128,28 @@ public class FirstPersonPlayerController : PlayerControlType
         m_playerData.VCamera.Priority = 1;
 
         m_lastFramePosition = transform.position;
+
+        m_playerData.CanvasFpp.SetActive(true);
+
+        onSwappedTo?.Invoke();
+
+        Invoke(nameof(UnpauseCarrying), 1f);
     }
 
     public override void OnSwappedFrom()
     {
         m_playerData.VCamera.Priority = 0;
+
+        m_playerData.CanvasFpp.SetActive(false);
+
+        onSwappedFrom?.Invoke();
+
+        m_carryObject.IsCarryingPaused = true;
+    }
+
+    void UnpauseCarrying()
+    {
+        m_carryObject.IsCarryingPaused = false;
     }
 
     void CheckDeathPlane()
@@ -139,12 +161,7 @@ public class FirstPersonPlayerController : PlayerControlType
 
         var motor = FirstPersonPlayerData.Instance.Motor;
 
-        Vector3 newPosition = motor.transform.position;
-        newPosition.y = respawnHeight;
-
-        motor.Teleport(newPosition);
-
-        m_lastFramePosition = transform.position;
+        motor.Teleport(m_spawnPosition);
     }
 
     public void UpdateMouseSens(float a_newSens)
