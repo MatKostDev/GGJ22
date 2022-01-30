@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMotor : MonoBehaviour
 {
+    public UnityEvent onLanded = new UnityEvent();
+    public UnityEvent onJumped = new UnityEvent();
+
 	[Header("General")]
 	[SerializeField]
 	float maxSpeedMultiple = 2.5f;
@@ -59,7 +63,7 @@ public class PlayerMotor : MonoBehaviour
 	Transform           m_moveTarget;
     CharacterController m_characterController;
 
-    bool m_isGrounded;
+    bool m_isGrounded = true;
 
 	float m_lastTimeJumpPerformed = -999f;
 
@@ -190,8 +194,15 @@ public class PlayerMotor : MonoBehaviour
 	}
 
 	void PerformGroundCheck()
-	{
+    {
+        bool wasGrounded = m_isGrounded;
+
 		m_isGrounded = m_characterController.isGrounded;
+
+        if (m_isGrounded && !wasGrounded)
+        {
+            onLanded?.Invoke();
+        }
     }
 
 	void UpdateCurrentMovementVariables()
@@ -308,6 +319,8 @@ public class PlayerMotor : MonoBehaviour
 		m_velocity.y = m_jumpVelocityY;
 
         m_lastTimeJumpPerformed = Time.time;
+
+		onJumped?.Invoke();
 	}
 
     //this function should be called AFTER standard movement is applied for the current update
