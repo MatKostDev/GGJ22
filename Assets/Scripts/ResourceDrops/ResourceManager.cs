@@ -3,9 +3,14 @@ using UnityEngine;
 
 public class ResourceManager : Singleton<ResourceManager>
 {
+    [SerializeField]
+    float passiveResourceGainTime = 5f;
+
     TMP_Text m_resourceText;
 
-    int m_currentAmount = 0;
+    int m_currentAmount = 10;
+
+    float m_passiveResourceTimer;
 
     public int CurrentAmount
     {
@@ -17,6 +22,19 @@ public class ResourceManager : Singleton<ResourceManager>
         m_resourceText = GameObject.FindGameObjectWithTag("ResourceAmountText").GetComponent<TMP_Text>();
 
         UpdateUI();
+    }
+
+    void Update()
+    {
+        m_passiveResourceTimer += Time.deltaTime;
+
+        if (m_passiveResourceTimer > passiveResourceGainTime)
+        {
+            m_currentAmount++;
+            UpdateUI();
+
+            m_passiveResourceTimer = 0f;
+        }
     }
 
     public void AddResources(int a_amount = 1)
