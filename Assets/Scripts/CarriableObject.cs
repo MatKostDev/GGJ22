@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CarriableObject : MonoBehaviour
 {
+    public UnityEvent onPickedUp   = new UnityEvent();
+    public UnityEvent onPlacedDown = new UnityEvent();
+
     [SerializeField]
     Color validColor = Color.green;
 
@@ -85,6 +89,8 @@ public class CarriableObject : MonoBehaviour
         m_isCarried = true;
 
         m_desiredPosition = transform.position;
+
+        onPickedUp?.Invoke();
     }
 
     public void OnPlacedDown()
@@ -99,6 +105,8 @@ public class CarriableObject : MonoBehaviour
         {
             m_desiredPosition.y = castHit.point.y + boxcastSize.y;
         }
+
+        onPlacedDown?.Invoke();
     }
 
     void OnTriggerEnter(Collider a_other)

@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class FirstPersonPlayerController : PlayerControlType
 {
+    public UnityEvent onSwappedTo   = new UnityEvent();
+    public UnityEvent onSwappedFrom = new UnityEvent();
+
     [Header("Death Plane / Respawn")]
     [SerializeField]
     [Tooltip("Just for sanity, but the player shouldn't be able to fall below the map")]
@@ -126,6 +130,8 @@ public class FirstPersonPlayerController : PlayerControlType
         m_lastFramePosition = transform.position;
 
         m_playerData.CanvasFpp.SetActive(true);
+
+        onSwappedTo?.Invoke();
     }
 
     public override void OnSwappedFrom()
@@ -133,6 +139,8 @@ public class FirstPersonPlayerController : PlayerControlType
         m_playerData.VCamera.Priority = 0;
 
         m_playerData.CanvasFpp.SetActive(false);
+
+        onSwappedFrom?.Invoke();
     }
 
     void CheckDeathPlane()
