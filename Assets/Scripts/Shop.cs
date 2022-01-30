@@ -53,8 +53,6 @@ public class Shop : MonoBehaviour
 
         turretCooldownImage.fillAmount = m_turretTimer / turretCooldown;
         unitCooldownImage.fillAmount   = m_unitTimer   / unitCooldown;
-
-        Debug.Log("aaaa");
     }
 
     public void TryBuyTurret()

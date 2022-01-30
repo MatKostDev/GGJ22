@@ -178,11 +178,11 @@ public class CommandPost : MonoBehaviour
 
         if (m_alliesAdded >= requiredUnitsForCapture)
         {
-            ChangeFaction(FactionType.Enemy);
+            ChangeFaction(FactionType.Friendly);
         }
         else if (m_enemiesAdded >= requiredUnitsForCapture)
         {
-            ChangeFaction(FactionType.Friendly);
+            ChangeFaction(FactionType.Enemy);
         }
     }
 }

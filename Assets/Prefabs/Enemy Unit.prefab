@@ -265,6 +265,8 @@ GameObject:
   - component: {fileID: 7446588902035406247}
   - component: {fileID: 7446588902035406244}
   - component: {fileID: 4920045468057797952}
+  - component: {fileID: 8278628197832076197}
+  - component: {fileID: 7528236833813689693}
   m_Layer: 17
   m_Name: Enemy Unit
   m_TagString: EUnit
@@ -450,6 +452,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7528236833813689693}
+        m_TargetAssemblyTypeName: ResourceDropEmitter, Assembly-CSharp
+        m_MethodName: EmitLoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &4920045468057797952
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -466,6 +480,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8278628197832076197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446588902035406271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b03938fdd6700144832922cee901a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 2
+--- !u!114 &7528236833813689693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446588902035406271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 402bf94b525a60346b2b9c91a3026c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPrefab: {fileID: 4311501926434618549, guid: 79133b3516a6dd943856220224081ad1, type: 3}
+  numDropsToEmit: 5
 --- !u!1 &7446588902989645732
 GameObject:
   m_ObjectHideFlags: 0
