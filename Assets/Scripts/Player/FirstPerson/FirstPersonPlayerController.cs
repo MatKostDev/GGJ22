@@ -11,9 +11,6 @@ public class FirstPersonPlayerController : PlayerControlType
     [Tooltip("Just for sanity, but the player shouldn't be able to fall below the map")]
     float deathPlaneHeight = -50f;
 
-    [SerializeField]
-    float respawnHeight = 4f;
-
     [Header("Mouse Sens")]
     [SerializeField]
     float mouseSens = 1f;
@@ -35,6 +32,8 @@ public class FirstPersonPlayerController : PlayerControlType
     CinemachineVirtualCamera m_vCam;
 
     Vector3 m_lastFramePosition;
+
+    Vector3 m_spawnPosition;
 
     bool m_canMove = true;
 
@@ -68,6 +67,8 @@ public class FirstPersonPlayerController : PlayerControlType
         m_carryObject     = m_playerData.ObjectCarry;
 
         m_lastFramePosition = transform.position;
+
+        m_spawnPosition = transform.position;
     }
 
     public override void OnUpdate()
@@ -143,12 +144,7 @@ public class FirstPersonPlayerController : PlayerControlType
 
         var motor = FirstPersonPlayerData.Instance.Motor;
 
-        Vector3 newPosition = motor.transform.position;
-        newPosition.y = respawnHeight;
-
-        motor.Teleport(newPosition);
-
-        m_lastFramePosition = transform.position;
+        motor.Teleport(m_spawnPosition);
     }
 
     public void UpdateMouseSens(float a_newSens)
