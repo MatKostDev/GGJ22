@@ -10,23 +10,22 @@ public class AIAction_RotateTowardsPlayer : AIAction
 
     [Header("References")]
     [SerializeField] NavMeshAgent agent = null;
-    [SerializeField] Transform enemyTransform = null;
-    GameObject player = null;
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.Find("PlayerCapsule");
-    }
+    [SerializeField] Transform parentTransform = null;
+    [SerializeField] AISensor_Sphere sphere = null;
 
     public override void SelectAction()
     {
+        var sensed = sphere.GetSensedObject();
+        if (sensed == null)
+            return;
         agent.updateRotation = false;
-        var dir = AISensor.DirectionToPlayer(enemyTransform);
-        dir = Vector3.Lerp(dir, dir + player.GetComponent<Rigidbody>().velocity, AIBlackboard.RandomFloatHelper(aimLeading));
+        var dir = sensed.transform.position - transform.position;
+        dir = dir.normalized;
+        dir = Vector3.Lerp(dir, dir + sphere.GetSensedObject().GetComponent<Rigidbody>().velocity, AIBlackboard.RandomFloatHelper(aimLeading));
 
         var newRotation = Quaternion.LookRotation(dir.normalized);
 
-        AIBlackboard.RotationHelper(enemyTransform.rotation, newRotation, enemyTransform, turnSpeedWhileStandingStill);
+        AIBlackboard.RotationHelper(parentTransform.rotation, newRotation, parentTransform, turnSpeedWhileStandingStill);
 
         base.SelectAction();
     }

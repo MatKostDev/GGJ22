@@ -14,12 +14,12 @@ public class AISensor_Cone : AISensor
     // Update is called once per frame
     void Update()
     {
-        _angle = Vector3.Angle(enemyTransform.forward, DirectionToPlayer(enemyTransform).normalized);
+        //_angle = Vector3.Angle(enemyTransform.forward, DirectionToPlayer(enemyTransform).normalized);
     }
     public override bool Sense()
     {
-        if (Mathf.Abs(_angle) <= sightConeAngle && DistanceToPlayer(enemyTransform) <= sightConeLength)
-            return SetSenseTime();
+        //if (Mathf.Abs(_angle) <= sightConeAngle && DistanceToPlayer(enemyTransform) <= sightConeLength)
+         //   return SetSenseTime();
         return false;
     }
 }
