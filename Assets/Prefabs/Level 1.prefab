@@ -1267,6 +1267,7 @@ GameObject:
   - component: {fileID: 844129344217568104}
   - component: {fileID: 5967307855472739975}
   - component: {fileID: 3037629384088337408}
+  - component: {fileID: 2498282366790215913}
   m_Layer: 0
   m_Name: FRIENDLY BASE
   m_TagString: Untagged
@@ -1301,6 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialFaction: 1
+  isEndGoal: 1
   requiredUnitsForCapture: 10
   neutralColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
@@ -3055,6 +3057,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
+--- !u!65 &2498282366790215913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037629384088337410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.741877, y: 36, z: 28.079346}
+  m_Center: {x: 1.909709, y: 18, z: -2.1815052}
 --- !u!1 &3105535050724305800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4009,6 +4024,7 @@ GameObject:
   - component: {fileID: 3625638993726562884}
   - component: {fileID: 3625638993726562887}
   - component: {fileID: 3625638993726562936}
+  - component: {fileID: 2272995618150809096}
   m_Layer: 0
   m_Name: FRIENDLY 2
   m_TagString: Untagged
@@ -4043,6 +4059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialFaction: 1
+  isEndGoal: 0
   requiredUnitsForCapture: 5
   neutralColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
@@ -5599,6 +5616,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
+--- !u!65 &2272995618150809096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625638993726562881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.82788, y: 28, z: 16.730625}
+  m_Center: {x: 1.9029825, y: 14, z: 2.3009067}
 --- !u!1 &3625638993759708175
 GameObject:
   m_ObjectHideFlags: 0
@@ -5648,6 +5678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialFaction: 2
+  isEndGoal: 0
   requiredUnitsForCapture: 5
   neutralColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
@@ -7253,6 +7284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialFaction: 0
+  isEndGoal: 0
   requiredUnitsForCapture: 5
   neutralColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
@@ -8858,6 +8890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialFaction: 0
+  isEndGoal: 0
   requiredUnitsForCapture: 5
   neutralColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
@@ -10429,6 +10462,7 @@ GameObject:
   - component: {fileID: 3625638995043915574}
   - component: {fileID: 3625638995043915569}
   - component: {fileID: 3625638995043915562}
+  - component: {fileID: 155370760594040071}
   m_Layer: 0
   m_Name: ENEMY BASE
   m_TagString: Untagged
@@ -10463,6 +10497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialFaction: 2
+  isEndGoal: 1
   requiredUnitsForCapture: 10
   neutralColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
@@ -12217,6 +12252,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
+--- !u!65 &155370760594040071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625638995043915571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.741877, y: 36, z: 28.079346}
+  m_Center: {x: 1.909709, y: 18, z: -2.1815052}
 --- !u!1 &3625638995353639065
 GameObject:
   m_ObjectHideFlags: 0
@@ -12266,6 +12314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialFaction: 0
+  isEndGoal: 0
   requiredUnitsForCapture: 5
   neutralColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
@@ -39805,7 +39854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6295374908526669294}
   m_Layer: 0
-  m_Name: Level 1 1
+  m_Name: Level 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,6 +8,9 @@ public class CommandPost : MonoBehaviour
     FactionType initialFaction;
 
     [SerializeField]
+    bool isEndGoal = false;
+
+    [SerializeField]
     int requiredUnitsForCapture = 5;
 
     [SerializeField]
@@ -26,12 +29,34 @@ public class CommandPost : MonoBehaviour
 
     MeshRenderer m_meshRenderer;
 
+    int m_numControlledEnemy = 0;
+    int m_numControlledAlly  = 0;
+
+    int m_totalNumCapturable;
+
+    public bool IsEndGoal
+    {
+        get => isEndGoal;
+    }
+
     void Awake()
     {
         m_faction      = GetComponent<Faction>();
         m_meshRenderer = GetComponent<MeshRenderer>();
 
         ChangeFaction(initialFaction);
+    }
+
+    void Start()
+    {
+        var posts = FindObjectsOfType<CommandPost>(true);
+        foreach (var post in posts)
+        {
+            if (!post.isEndGoal)
+            {
+                m_totalNumCapturable++;
+            }
+        }
     }
 
     void ChangeFaction(FactionType a_newFaction)
@@ -57,6 +82,21 @@ public class CommandPost : MonoBehaviour
         if (!a_other.TryGetComponent<Faction>(out var otherFaction))
         {
             return;
+        }
+
+        bool isOtherFaction = otherFaction.FactionType != m_faction.FactionType;
+        if (!isOtherFaction)
+        {
+            return;
+        }
+
+        if (isEndGoal)
+        {
+            if ((otherFaction.FactionType == FactionType.Enemy && m_numControlledEnemy < m_totalNumCapturable)
+                || (otherFaction.FactionType == FactionType.Friendly && m_numControlledAlly < m_totalNumCapturable))
+            {
+                return;
+            }
         }
 
         if (m_faction.FactionType == FactionType.Neutral)
