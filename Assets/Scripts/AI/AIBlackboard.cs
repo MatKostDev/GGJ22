@@ -11,8 +11,6 @@ public class AIBlackboard : MonoBehaviour
     [SerializeField] Vector2 timeBetweenDecisions = Vector2.zero;
 
     [Header("References")]
-    [SerializeField] AISensor_Alert alertSensor = null;
-    [SerializeField] AIDecider_TimeBased patrol = null;
     [SerializeField] List<AIDecider> deciders = new List<AIDecider>();
 
     float _decisionTimer = 0.0f;
@@ -26,11 +24,6 @@ public class AIBlackboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!alertSensor.Alerted())
-        {
-            patrol.TryPerformActions();
-            return;
-        }
         _decisionTimer -= Time.deltaTime;
         if (_decisionTimer <= 0.0f)
         {

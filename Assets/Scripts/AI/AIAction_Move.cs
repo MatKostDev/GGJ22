@@ -11,18 +11,20 @@ public class AIAction_Move : AIAction
     [Header("References")]
     [SerializeField] NavMeshAgent agent = null;
     // Start is called before the first frame update
+
+    //come back to this since movement will work different for units
     public override void SelectAction()
     {
-        NavMeshHit hit;
-        var dist = AIBlackboard.RandomFloatHelper(movementRange);
-        var destination = transform.position + AISensor.DirectionToPlayer(transform).normalized * sign * dist;
-        if (agent.remainingDistance <= agent.stoppingDistance)
-        {
-            if (!NavMesh.SamplePosition(destination, out hit, dist, NavMesh.AllAreas))
-                destination = transform.position - AISensor.DirectionToPlayer(transform).normalized * sign * dist;
-            agent.SetDestination(destination);
-            agent.updateRotation = true;
-        }
+        //NavMeshHit hit;
+        //var dist = AIBlackboard.RandomFloatHelper(movementRange);
+        //var destination = transform.position + AISensor.DirectionToPlayer(transform).normalized * sign * dist;
+        //if (agent.remainingDistance <= agent.stoppingDistance)
+        //{
+        //    if (!NavMesh.SamplePosition(destination, out hit, dist, NavMesh.AllAreas))
+        //        destination = transform.position - AISensor.DirectionToPlayer(transform).normalized * sign * dist;
+        //    agent.SetDestination(destination);
+        //    agent.updateRotation = true;
+        //}
         base.SelectAction();
     }
 }

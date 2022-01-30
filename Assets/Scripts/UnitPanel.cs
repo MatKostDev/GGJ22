@@ -75,6 +75,11 @@ public class UnitPanel : MonoBehaviour
         OnSelectUnit.Invoke();
     }
 
+    public Unit GetSelectedUnit()
+    {
+        return _selectedUnit;
+    }
+
     public static void SelectUnit(Unit unit)
     {
         _instance._SelectUnit(unit);
