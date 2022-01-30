@@ -33,8 +33,8 @@ public class CommandPost : MonoBehaviour
 
     MeshRenderer m_meshRenderer;
 
-    int m_numControlledEnemy = 0;
-    int m_numControlledAlly  = 0;
+    static int s_numControlledEnemy = 0;
+    static int s_numControlledAlly  = 0;
 
     int m_totalNumCapturable;
 
@@ -82,6 +82,30 @@ public class CommandPost : MonoBehaviour
 
         m_meshRenderer.material.SetColor("_LineColor", newColor);
 
+        if (!isEndGoal)
+        {
+            if (a_newFaction == FactionType.Friendly)
+            {
+                s_numControlledAlly++;
+
+                if (oldFaction == FactionType.Enemy)
+                {
+                    s_numControlledEnemy--;
+                }
+            }
+            else if (a_newFaction == FactionType.Enemy)
+            {
+                s_numControlledEnemy++;
+
+                Debug.Log(s_numControlledEnemy);
+
+                if (oldFaction == FactionType.Friendly)
+                {
+                    s_numControlledAlly--;
+                }
+            }
+        }
+
         if (a_newEntry)
         {
             if (a_newFaction == FactionType.Friendly)
@@ -91,27 +115,6 @@ public class CommandPost : MonoBehaviour
             else if (a_newFaction == FactionType.Enemy)
             {
                 onEnemyCapture?.Invoke();
-            }
-
-            Debug.Log(a_newFaction);
-
-            if (a_newFaction == FactionType.Friendly)
-            {
-                m_numControlledAlly++;
-
-                if (oldFaction == FactionType.Enemy)
-                {
-                    m_numControlledEnemy--;
-                }
-            }
-            else
-            {
-                m_numControlledEnemy++;
-
-                if (oldFaction == FactionType.Friendly)
-                {
-                    m_numControlledAlly--;
-                }
             }
 
             if (isEndGoal)
@@ -141,10 +144,10 @@ public class CommandPost : MonoBehaviour
 
         if (isEndGoal)
         {
-            Debug.Log(m_numControlledEnemy + " out of " + m_totalNumCapturable);
+            Debug.Log(s_numControlledEnemy + " out of " + m_totalNumCapturable);
 
-            if ((otherFaction.FactionType == FactionType.Enemy && m_numControlledEnemy < m_totalNumCapturable)
-                || (otherFaction.FactionType == FactionType.Friendly && m_numControlledAlly < m_totalNumCapturable))
+            if ((otherFaction.FactionType == FactionType.Enemy && s_numControlledEnemy < m_totalNumCapturable)
+                || (otherFaction.FactionType == FactionType.Friendly && s_numControlledAlly < m_totalNumCapturable))
             {
                 return;
             }

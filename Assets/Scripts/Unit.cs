@@ -15,7 +15,7 @@ public class Unit : MonoBehaviour
 
     public void SetDestination(Vector3 dest)
     {
-        if (!canMove)
+        if (!canMove || !agent)
             return;
         agent.updateRotation = true;
         agent.SetDestination(dest);

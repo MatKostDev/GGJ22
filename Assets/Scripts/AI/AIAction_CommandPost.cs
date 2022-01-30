@@ -13,6 +13,12 @@ public class AIAction_CommandPost : AIAction
         List<CommandPost> workingList = new List<CommandPost>();
 
         CommandPost closest = GetClosestCommandPost(workingList);
+
+        if (!closest)
+        {
+            return;
+        }
+
         foreach (var u in unitSpawner.units)
         {
             if (u == null)
