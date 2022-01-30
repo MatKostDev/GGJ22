@@ -10,6 +10,9 @@ public class Turret : MonoBehaviour
     [SerializeField]
     TurretDetection detection;
 
+    [SerializeField]
+    LayerMask rayCheckLayers;
+
     void Update()
     {
         Transform closestEnemy = null;
@@ -18,18 +21,27 @@ public class Turret : MonoBehaviour
 
         for (int i = 0; i < detection.CurrentTargets.Count; i++)
         {
-            if (!detection.CurrentTargets[i])
+            var currentTarget = detection.CurrentTargets[i];
+
+            if (!currentTarget)
             {
                 detection.CurrentTargets.RemoveAt(i);
                 i--;
                 continue;
             }
 
-            float sqrDistance = (transform.position - detection.CurrentTargets[i].position).sqrMagnitude;
+            Vector3 enemyDirection = currentTarget.position - barrelTransform.position;
+            if (!Physics.Raycast(barrelTransform.position, enemyDirection, out var rayHit, 999f, rayCheckLayers.value)
+                || rayHit.transform != currentTarget)
+            {
+                continue;
+            }
+
+            float sqrDistance = (transform.position - currentTarget.position).sqrMagnitude;
 
             if (sqrDistance < closestSqrDistance)
             {
-                closestEnemy       = detection.CurrentTargets[i];
+                closestEnemy       = currentTarget;
                 closestSqrDistance = sqrDistance;
             }
         }
