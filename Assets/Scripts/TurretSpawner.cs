@@ -21,7 +21,18 @@ public class TurretSpawner : Singleton<TurretSpawner>
         }
     }
 
+    public void RespawnExistingTurret(Transform a_moveTarget)
+    {
+        a_moveTarget.position = GetSpawnPosition();
+        Debug.Log(a_moveTarget.position);
+    }
+
     public void SpawnTurret()
+    {
+        Instantiate(turretPrefab, GetSpawnPosition(), spawnTransform.rotation);
+    }
+
+    Vector3 GetSpawnPosition()
     {
         Vector3 spawnPosition = spawnTransform.position;
 
@@ -34,8 +45,6 @@ public class TurretSpawner : Singleton<TurretSpawner>
             spawnPosition.x += 0.1f * m_multiplySign;
         }
 
-        Instantiate(turretPrefab, spawnPosition, spawnTransform.rotation);
-
         m_spawnNumber++;
 
         if (m_spawnNumber > 2)
@@ -44,5 +53,7 @@ public class TurretSpawner : Singleton<TurretSpawner>
 
             m_multiplySign *= -1;
         }
+
+        return spawnPosition;
     }
 }

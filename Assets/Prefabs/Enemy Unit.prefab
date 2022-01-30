@@ -110,7 +110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   poolSize: 3
-  bulletSpeed: 15
+  bulletSpeed: 40
   bulletPrefab: {fileID: 2791174852078915802, guid: 415fde12dac8b8d40a17f5f8906bfef2, type: 3}
   bulletEmitterPoints:
   - {fileID: 2526548452311456866}

@@ -7,8 +7,8 @@ public class ResourceDrop : MonoBehaviour
 {
     public UnityEvent onCollected = new UnityEvent();
 
-    const float MAX_SPEED = 3.5f;
-    const float FLY_SPEED = 25f;
+    const float MAX_SPEED = 1.5f;
+    const float FLY_SPEED = 30f;
 
     Rigidbody    m_rigidbody;
     MeshRenderer m_meshRenderer;

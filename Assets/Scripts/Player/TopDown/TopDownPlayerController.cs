@@ -35,7 +35,7 @@ public class TopDownPlayerController : PlayerControlType
             moveAxis = moveAxis.normalized;
         }
 
-        followObject.Translate(moveAxis * speed, Space.World);
+        followObject.Translate(moveAxis * speed * Time.deltaTime, Space.World);
         MoveUnit();
     }
 
@@ -56,12 +56,15 @@ public class TopDownPlayerController : PlayerControlType
             unit.SetDestination(position);
             OnSetUnitDestination.Invoke();
         }
-
-
     }
 
     public override void OnSwappedTo()
     {
+        Vector3 newPosition = FirstPersonPlayerData.Instance.BodyTransform.position;
+        newPosition.y = followObject.transform.position.y;
+
+        followObject.transform.position = newPosition;
+
         vCam.Priority = 1;
         unitPanelAnimator.SetTrigger("Open");
         SwappedTo.Invoke();

@@ -31,6 +31,8 @@ public class CarriableObject : MonoBehaviour
     bool m_canBePlaced = false;
     bool m_isCarried   = false;
 
+    bool m_teleportNextFrame = false;
+
     Outline m_outline;
 
     bool m_showOutline = false;
@@ -65,6 +67,12 @@ public class CarriableObject : MonoBehaviour
 
     void Update()
     {
+        if (m_teleportNextFrame)
+        {
+            m_desiredPosition   = moveTarget.position;
+            m_teleportNextFrame = false;
+        }
+
         moveTarget.position = Vector3.Lerp(moveTarget.position, m_desiredPosition, moveSpeed * Time.deltaTime);
 
         if (m_showOutline || m_isCarried)
@@ -123,7 +131,16 @@ public class CarriableObject : MonoBehaviour
         }
         else
         {
-            Destroy(moveTarget.gameObject);
+            if (TryGetComponent<Turret>(out var turret))
+            {
+                TurretSpawner.Instance.RespawnExistingTurret(moveTarget);
+                m_teleportNextFrame = true;
+            }
+            else
+            {
+                Destroy(moveTarget.gameObject);
+                return;
+            }
         }
 
         onPlacedDown?.Invoke();
