@@ -6,9 +6,12 @@ public class ResourceManager : Singleton<ResourceManager>
     [SerializeField]
     float passiveResourceGainTime = 5f;
 
+    [SerializeField]
+    int initialAmount = 15;
+
     TMP_Text m_resourceText;
 
-    int m_currentAmount = 10;
+    int m_currentAmount;
 
     float m_passiveResourceTimer;
 
@@ -20,6 +23,8 @@ public class ResourceManager : Singleton<ResourceManager>
     void Awake()
     {
         m_resourceText = GameObject.FindGameObjectWithTag("ResourceAmountText").GetComponent<TMP_Text>();
+
+        m_currentAmount = initialAmount;
 
         UpdateUI();
     }

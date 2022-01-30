@@ -16830,6 +16830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passiveResourceGainTime: 5
+  initialAmount: 15
 --- !u!4 &1803913228
 Transform:
   m_ObjectHideFlags: 0
@@ -18127,7 +18128,7 @@ MonoBehaviour:
   turretsCostText: {fileID: 1031536198}
   unitsCostText: {fileID: 2082375942}
   turretsCost: 5
-  unitsCost: 15
+  unitsCost: 10
   turretCooldownImage: {fileID: 1072504129}
   unitCooldownImage: {fileID: 898888055}
   turretCooldown: 2

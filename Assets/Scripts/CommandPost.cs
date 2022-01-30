@@ -63,8 +63,10 @@ public class CommandPost : MonoBehaviour
         }
     }
 
-    void ChangeFaction(FactionType a_newFaction, bool a_playEvent = true)
+    void ChangeFaction(FactionType a_newFaction, bool a_newEntry = true)
     {
+        FactionType oldFaction = m_faction.FactionType;
+
         m_faction.FactionType = a_newFaction;
 
         Color newColor = neutralColor;
@@ -80,7 +82,7 @@ public class CommandPost : MonoBehaviour
 
         m_meshRenderer.material.SetColor("_LineColor", newColor);
 
-        if (a_playEvent)
+        if (a_newEntry)
         {
             if (a_newFaction == FactionType.Friendly)
             {
@@ -90,11 +92,30 @@ public class CommandPost : MonoBehaviour
             {
                 onEnemyCapture?.Invoke();
             }
-        }
 
-        if (isEndGoal && a_playEvent)
-        {
-            Invoke(nameof(LoadMainMenu), 1f);
+            if (a_newFaction == FactionType.Friendly)
+            {
+                m_numControlledAlly++;
+
+                if (oldFaction == FactionType.Enemy)
+                {
+                    m_numControlledEnemy--;
+                }
+            }
+            else
+            {
+                m_numControlledEnemy++;
+
+                if (oldFaction == FactionType.Friendly)
+                {
+                    m_numControlledAlly--;
+                }
+            }
+
+            if (isEndGoal)
+            {
+                Invoke(nameof(LoadMainMenu), 1f);
+            }
         }
     }
 
