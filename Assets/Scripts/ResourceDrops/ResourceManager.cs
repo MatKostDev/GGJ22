@@ -26,6 +26,18 @@ public class ResourceManager : Singleton<ResourceManager>
         UpdateUI();
     }
 
+    public void SpendResources(int a_amount)
+    {
+        if (m_currentAmount < a_amount)
+        {
+            return;
+        }
+
+        m_currentAmount -= a_amount;
+
+        UpdateUI();
+    }
+
     void UpdateUI()
     {
         m_resourceText.text = m_currentAmount.ToString();
