@@ -29,7 +29,7 @@ public class Squad : MonoBehaviour
         }
         foreach (var s in squadUnits)
         {
-            if (!s.unit.gameObject.activeSelf)
+            if (!s.unit || !s.unit.gameObject.activeSelf)
                 continue;
             s.unit.SetDestination(dest);
         }

@@ -8411,11 +8411,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   speed: 100
-  scrollSpeed: 8
+  scrollSpeed: 25
   layerMask:
     serializedVersion: 2
     m_Bits: 1
-  scrollMinMax: {x: 20, y: 69}
+  scrollMinMax: {x: 0, y: 150}
   unitPanelAnimator: {fileID: 135231465}
   vCam: {fileID: 1740243583}
   followObject: {fileID: 1200345052}
