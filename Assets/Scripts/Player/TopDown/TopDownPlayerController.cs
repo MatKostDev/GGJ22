@@ -30,14 +30,19 @@ public class TopDownPlayerController : PlayerControlType
     {
         Vector3 moveAxis = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
 
-        followObject.Translate(moveAxis * speed, Space.World);
+        if (moveAxis.sqrMagnitude > 1f)
+        {
+            moveAxis = moveAxis.normalized;
+        }
+
+        followObject.Translate(moveAxis * speed * Time.deltaTime, Space.World);
         MoveUnit();
     }
 
     void MoveUnit()
     {
         var unit = unitPanel.GetSelectedUnit();
-        if (!Input.GetMouseButtonDown(1) || unit.CompareTag("EUnit") || !unit.CanMove())
+        if (!Input.GetMouseButtonDown(1) || !unit || unit.CompareTag("EUnit") || !unit.CanMove())
             return;
 
         var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -51,12 +56,15 @@ public class TopDownPlayerController : PlayerControlType
             unit.SetDestination(position);
             OnSetUnitDestination.Invoke();
         }
-
-
     }
 
     public override void OnSwappedTo()
     {
+        Vector3 newPosition = FirstPersonPlayerData.Instance.BodyTransform.position;
+        newPosition.y = followObject.transform.position.y;
+
+        followObject.transform.position = newPosition;
+
         vCam.Priority = 1;
         unitPanelAnimator.SetTrigger("Open");
         SwappedTo.Invoke();

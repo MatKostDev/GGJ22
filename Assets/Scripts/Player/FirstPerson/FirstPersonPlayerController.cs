@@ -13,7 +13,7 @@ public class FirstPersonPlayerController : PlayerControlType
     [Header("Death Plane / Respawn")]
     [SerializeField]
     [Tooltip("Just for sanity, but the player shouldn't be able to fall below the map")]
-    float deathPlaneHeight = -50f;
+    float deathPlaneHeight = -120f;
 
     [Header("Mouse Sens")]
     [SerializeField]
@@ -25,11 +25,19 @@ public class FirstPersonPlayerController : PlayerControlType
     [SerializeField]
     float maxMouseSens = 20f;
 
+    [Header("Reticle")]
+    [SerializeField]
+    Image reticle;
+
+    [SerializeField]
+    Color canGrappleReticleColor = Color.green;
+
     float m_currentFrameMouseX;
     float m_currentFrameMouseY;
 
     Transform         m_cameraTransform;
     PlayerObjectCarry m_carryObject;
+    GrappleHook       m_grappleHook;
 
     FirstPersonPlayerData m_playerData;
 
@@ -38,8 +46,13 @@ public class FirstPersonPlayerController : PlayerControlType
     Vector3 m_lastFramePosition;
 
     Vector3 m_spawnPosition;
+    Vector3 m_spawnRotation;
+
+    Color m_initialReticleColor;
 
     bool m_canMove = true;
+
+    float m_updateDelay = 0f;
 
     public float DeathPlaneHeight
     {
@@ -69,14 +82,24 @@ public class FirstPersonPlayerController : PlayerControlType
 
         m_cameraTransform = m_playerData.PlayerCamera.transform;
         m_carryObject     = m_playerData.ObjectCarry;
+        m_grappleHook     = m_playerData.Grapple;
 
         m_lastFramePosition = transform.position;
 
         m_spawnPosition = transform.position;
+        m_spawnRotation = transform.eulerAngles;
+
+        m_initialReticleColor = reticle.color;
     }
 
     public override void OnUpdate()
     {
+        if (m_updateDelay > 0f)
+        {
+            m_updateDelay -= Time.deltaTime;
+            return;
+        }
+
         bool jump = Input.GetButtonDown("Jump");
 
         //rotation
@@ -87,6 +110,19 @@ public class FirstPersonPlayerController : PlayerControlType
         lookAxis *= mouseSens;
 
         m_playerData.RotationController.UpdateRotations(lookAxis);
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (m_grappleHook.IsGrappling)
+            {
+                //this is jank but ye
+                jump = true;
+            }
+            else if (!m_carryObject.IsCarrying)
+            {
+                m_grappleHook.FireGrapple(m_cameraTransform.position, m_cameraTransform.forward);
+            }
+        }
 
         //movement
         if (m_canMove)
@@ -100,9 +136,30 @@ public class FirstPersonPlayerController : PlayerControlType
             m_playerData.Motor.Move(moveAxis, jump);
         }
 
+        if (m_grappleHook.HasValidGrapplePoint(m_cameraTransform.position, m_cameraTransform.forward))
+        {
+            reticle.color = canGrappleReticleColor;
+        }
+        else
+        {
+            reticle.color = m_initialReticleColor;
+        }
+
+        if (m_grappleHook.IsGrappling)
+        {
+            if (Input.GetKey(KeyCode.Q))
+            {
+                m_grappleHook.AddSlack();
+            }
+            if (Input.GetKey(KeyCode.E))
+            {
+                m_grappleHook.ReduceSlack();
+            }
+        }
+
         m_carryObject.UpdateCarrying(m_cameraTransform.forward, m_cameraTransform.position);
 
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(0))
         {
             if (m_carryObject.IsCarrying)
             {
@@ -134,6 +191,8 @@ public class FirstPersonPlayerController : PlayerControlType
         onSwappedTo?.Invoke();
 
         Invoke(nameof(UnpauseCarrying), 1f);
+
+        m_updateDelay = 0.8f;
     }
 
     public override void OnSwappedFrom()
@@ -161,7 +220,15 @@ public class FirstPersonPlayerController : PlayerControlType
 
         var motor = FirstPersonPlayerData.Instance.Motor;
 
+        if (m_grappleHook.IsGrappling)
+        {
+            m_grappleHook.DetachGrapple();
+        }
+
+        motor.ResetVelocity();
         motor.Teleport(m_spawnPosition);
+
+        m_playerData.RotationController.EulerRotation = m_spawnRotation;
     }
 
     public void UpdateMouseSens(float a_newSens)

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879719406086345902}
   - component: {fileID: 879719406086345903}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Weapon Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,6 @@ MonoBehaviour:
   primaryWeapon: {fileID: 879719406159409934}
   ownerEntity: {fileID: 0}
   canAttack: 1
-  _Debug: 0
 --- !u!1 &879719406150081599
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +71,7 @@ GameObject:
   - component: {fileID: 879719406150081575}
   - component: {fileID: 879719406150081572}
   - component: {fileID: 3397260365881631936}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Player Unit
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -123,7 +122,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ae1009bab193194796d7189858ae5a9, type: 2}
+  - {fileID: 2100000, guid: fe055cf592297794f92e3144f818769b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -184,8 +183,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 5
+  m_Acceleration: 14
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -266,7 +265,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -282,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879719406159409905}
   - component: {fileID: 879719406159409934}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +327,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   poolSize: 3
-  bulletSpeed: 5
+  bulletSpeed: 40
   bulletPrefab: {fileID: 2791174852078915802, guid: 415fde12dac8b8d40a17f5f8906bfef2, type: 3}
   bulletEmitterPoints:
   - {fileID: 879719407736706660}
@@ -347,7 +346,7 @@ GameObject:
   - component: {fileID: 879719407073895975}
   - component: {fileID: 879719407073895979}
   - component: {fileID: 879719407073895976}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 879719407736706660}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Bullet Emitter Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056221833896710186, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5056221833896710187, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Pivot.x
@@ -610,9 +609,25 @@ PrefabInstance:
       propertyPath: m_text
       value: S
       objectReference: {fileID: 0}
+    - target: {fileID: 5056221834058711616, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056221834058711616, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056221834058711616, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056221834058711616, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5056221834058711618, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.a
@@ -620,15 +635,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.b
-      value: 0.2509804
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.g
-      value: 0.86274517
+      value: 0.7924528
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.r
-      value: 0.3372549
+      value: 0.4623695
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109266, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: unit
@@ -636,7 +651,11 @@ PrefabInstance:
       objectReference: {fileID: 879719406150081575}
     - target: {fileID: 5056221835089109276, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056221835089109277, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}

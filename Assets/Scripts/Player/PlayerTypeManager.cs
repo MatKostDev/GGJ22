@@ -15,6 +15,8 @@ public class PlayerTypeManager : MonoBehaviour
     {
         m_firstPersonController = FirstPersonPlayerData.Instance.Controller;
         m_topDownController     = FindObjectOfType<TopDownPlayerController>();
+
+        Application.targetFrameRate = 300;
     }
 
     void Start()
