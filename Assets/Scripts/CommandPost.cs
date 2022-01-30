@@ -33,8 +33,8 @@ public class CommandPost : MonoBehaviour
 
     MeshRenderer m_meshRenderer;
 
-    int m_numControlledEnemy = 0;
-    int m_numControlledAlly  = 0;
+    static int s_numControlledEnemy = 0;
+    static int s_numControlledAlly  = 0;
 
     int m_totalNumCapturable;
 
@@ -63,8 +63,10 @@ public class CommandPost : MonoBehaviour
         }
     }
 
-    void ChangeFaction(FactionType a_newFaction, bool a_playEvent = true)
+    void ChangeFaction(FactionType a_newFaction, bool a_newEntry = true)
     {
+        FactionType oldFaction = m_faction.FactionType;
+
         m_faction.FactionType = a_newFaction;
 
         Color newColor = neutralColor;
@@ -80,7 +82,29 @@ public class CommandPost : MonoBehaviour
 
         m_meshRenderer.material.SetColor("_LineColor", newColor);
 
-        if (a_playEvent)
+        if (!isEndGoal)
+        {
+            if (a_newFaction == FactionType.Friendly)
+            {
+                s_numControlledAlly++;
+
+                if (oldFaction == FactionType.Enemy)
+                {
+                    s_numControlledEnemy--;
+                }
+            }
+            else if (a_newFaction == FactionType.Enemy)
+            {
+                s_numControlledEnemy++;
+
+                if (oldFaction == FactionType.Friendly)
+                {
+                    s_numControlledAlly--;
+                }
+            }
+        }
+
+        if (a_newEntry)
         {
             if (a_newFaction == FactionType.Friendly)
             {
@@ -90,11 +114,11 @@ public class CommandPost : MonoBehaviour
             {
                 onEnemyCapture?.Invoke();
             }
-        }
 
-        if (isEndGoal && a_playEvent)
-        {
-            Invoke(nameof(LoadMainMenu), 1f);
+            if (isEndGoal)
+            {
+                Invoke(nameof(LoadMainMenu), 1f);
+            }
         }
     }
 
@@ -118,8 +142,8 @@ public class CommandPost : MonoBehaviour
 
         if (isEndGoal)
         {
-            if ((otherFaction.FactionType == FactionType.Enemy && m_numControlledEnemy < m_totalNumCapturable)
-                || (otherFaction.FactionType == FactionType.Friendly && m_numControlledAlly < m_totalNumCapturable))
+            if ((otherFaction.FactionType == FactionType.Enemy && s_numControlledEnemy < m_totalNumCapturable)
+                || (otherFaction.FactionType == FactionType.Friendly && s_numControlledAlly < m_totalNumCapturable))
             {
                 return;
             }

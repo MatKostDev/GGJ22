@@ -8411,11 +8411,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   speed: 100
-  scrollSpeed: 8
+  scrollSpeed: 25
   layerMask:
     serializedVersion: 2
     m_Bits: 1
-  scrollMinMax: {x: 20, y: 69}
+  scrollMinMax: {x: 0, y: 150}
   unitPanelAnimator: {fileID: 135231465}
   vCam: {fileID: 1740243583}
   followObject: {fileID: 1200345052}
@@ -10122,7 +10122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921241726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: 51, z: -11}
+  m_LocalPosition: {x: 11, y: 51, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 507761285}
@@ -16830,6 +16830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passiveResourceGainTime: 5
+  initialAmount: 15
 --- !u!4 &1803913228
 Transform:
   m_ObjectHideFlags: 0
@@ -18127,7 +18128,7 @@ MonoBehaviour:
   turretsCostText: {fileID: 1031536198}
   unitsCostText: {fileID: 2082375942}
   turretsCost: 5
-  unitsCost: 15
+  unitsCost: 10
   turretCooldownImage: {fileID: 1072504129}
   unitCooldownImage: {fileID: 898888055}
   turretCooldown: 2
