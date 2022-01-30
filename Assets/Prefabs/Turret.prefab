@@ -1158,7 +1158,7 @@ MonoBehaviour:
       m_Calls: []
   validColor: {r: 0, g: 1, b: 0, a: 1}
   invalidColor: {r: 1, g: 0, b: 0, a: 1}
-  moveSpeed: 25
+  moveSpeed: 20
   boxcastPoint: {fileID: 5559537343242651547}
   boxcastSize: {x: 0.47, y: 0.725, z: 0.47}
   moveTarget: {fileID: 5559537344721073314}
