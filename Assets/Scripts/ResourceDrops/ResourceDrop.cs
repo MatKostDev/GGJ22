@@ -109,6 +109,8 @@ public class ResourceDrop : MonoBehaviour
 
         onCollected?.Invoke();
 
+        ResourceManager.Instance.AddResources();
+
         Destroy(gameObject);
     }
 }

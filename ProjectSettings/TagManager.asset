@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LootCollector
+  - ResourceAmountText
   layers:
   - Default
   - TransparentFX

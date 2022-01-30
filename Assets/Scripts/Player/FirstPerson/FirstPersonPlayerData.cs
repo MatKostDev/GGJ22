@@ -24,6 +24,9 @@ public class FirstPersonPlayerData : Singleton<FirstPersonPlayerData>
     [SerializeField]
     Camera playerCamera;
 
+    [SerializeField]
+    GameObject canvasFpp;
+
     public static int PlayerLayer
     {
         get => LayerMask.NameToLayer("Player");
@@ -67,5 +70,10 @@ public class FirstPersonPlayerData : Singleton<FirstPersonPlayerData>
     public float GravityStrength
     {
         get => motor.GravityStrength;
+    }
+
+    public GameObject CanvasFpp
+    {
+        get => canvasFpp;
     }
 }
