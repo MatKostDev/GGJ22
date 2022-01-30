@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879719406086345902}
   - component: {fileID: 879719406086345903}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Weapon Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 879719406150081575}
   - component: {fileID: 879719406150081572}
   - component: {fileID: 3397260365881631936}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Player Unit
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879719406159409905}
   - component: {fileID: 879719406159409934}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 879719407073895975}
   - component: {fileID: 879719407073895979}
   - component: {fileID: 879719407073895976}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 879719407736706660}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Bullet Emitter Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056221833896710186, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5056221833896710187, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Pivot.x
@@ -627,7 +627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056221834058711618, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.a
@@ -651,7 +651,7 @@ PrefabInstance:
       objectReference: {fileID: 879719406150081575}
     - target: {fileID: 5056221835089109276, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109277, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_LocalPosition.z
