@@ -132,6 +132,8 @@ public class FirstPersonPlayerController : PlayerControlType
         m_playerData.CanvasFpp.SetActive(true);
 
         onSwappedTo?.Invoke();
+
+        Invoke(nameof(UnpauseCarrying), 1f);
     }
 
     public override void OnSwappedFrom()
@@ -141,6 +143,13 @@ public class FirstPersonPlayerController : PlayerControlType
         m_playerData.CanvasFpp.SetActive(false);
 
         onSwappedFrom?.Invoke();
+
+        m_carryObject.IsCarryingPaused = true;
+    }
+
+    void UnpauseCarrying()
+    {
+        m_carryObject.IsCarryingPaused = false;
     }
 
     void CheckDeathPlane()

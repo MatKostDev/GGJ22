@@ -17,14 +17,22 @@ public class PlayerObjectCarry : MonoBehaviour
 
     //Vector3 m_initialOffset;
 
+    bool m_isCarryingPaused = false;
+
     public bool IsCarrying
     {
         get => m_carriedObject;
     }
 
+    public bool IsCarryingPaused
+    {
+        get => m_isCarryingPaused;
+        set => m_isCarryingPaused = value;
+    }
+
     public void UpdateCarrying(Vector3 a_forwardDir, Vector3 a_position)
     {
-        if (!m_carriedObject)
+        if (!m_carriedObject || m_isCarryingPaused)
         {
             return;
         }
