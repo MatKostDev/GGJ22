@@ -10,6 +10,9 @@ public class FirstPersonPlayerData : Singleton<FirstPersonPlayerData>
     PlayerMotor motor;
 
     [SerializeField]
+    GrappleHook grapple;
+
+    [SerializeField]
     FirstPersonPlayerController controller;
 
     [SerializeField]
@@ -40,6 +43,11 @@ public class FirstPersonPlayerData : Singleton<FirstPersonPlayerData>
     public PlayerMotor Motor
     {
         get => motor;
+    }
+
+    public GrappleHook Grapple
+    {
+        get => grapple;
     }
 
     public FirstPersonPlayerController Controller
