@@ -5,22 +5,51 @@ using UnityEngine;
 public class CommandPost : MonoBehaviour
 {
     [SerializeField]
-    Faction faction;
+    FactionType initialFaction;
 
     [SerializeField]
     int requiredUnitsForCapture = 5;
 
+    [SerializeField]
+    Color neutralColor = Color.gray;
+
+    [SerializeField]
+    Color friendlyColor = Color.green;
+
+    [SerializeField]
+    Color enemyColor = Color.red;
+
     int m_enemiesAdded;
     int m_alliesAdded;
 
+    Faction m_faction;
+
+    MeshRenderer m_meshRenderer;
+
     void Awake()
     {
-        ChangeFaction(faction.FactionType);
+        m_faction      = GetComponent<Faction>();
+        m_meshRenderer = GetComponent<MeshRenderer>();
+
+        ChangeFaction(initialFaction);
     }
 
     void ChangeFaction(FactionType a_newFaction)
     {
-        faction.FactionType = a_newFaction;
+        m_faction.FactionType = a_newFaction;
+
+        Color newColor = neutralColor;
+
+        if (a_newFaction == FactionType.Enemy)
+        {
+            newColor = enemyColor;
+        }
+        else if (a_newFaction == FactionType.Friendly)
+        {
+            newColor = friendlyColor;
+        }
+
+        m_meshRenderer.material.SetColor("_LineColor", newColor);
     }
 
     void OnTriggerEnter(Collider a_other)
@@ -30,7 +59,7 @@ public class CommandPost : MonoBehaviour
             return;
         }
 
-        if (faction.FactionType == FactionType.Neutral)
+        if (m_faction.FactionType == FactionType.Neutral)
         {
             if (otherFaction.FactionType == FactionType.Enemy)
             {
@@ -59,7 +88,7 @@ public class CommandPost : MonoBehaviour
                 }
             }
         }
-        else if (faction.FactionType == FactionType.Friendly)
+        else if (m_faction.FactionType == FactionType.Friendly)
         {
             if (otherFaction.FactionType == FactionType.Enemy)
             {
@@ -67,7 +96,7 @@ public class CommandPost : MonoBehaviour
                 OnAddedUnit(a_other.gameObject);
             }
         }
-        else if (faction.FactionType == FactionType.Enemy)
+        else if (m_faction.FactionType == FactionType.Enemy)
         {
             if (otherFaction.FactionType == FactionType.Friendly)
             {
