@@ -1301,6 +1301,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f6ba7eb6f39d245a5cafdfd990b56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAllyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1512876945047877122}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4932638629336794840}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initialFaction: 1
   isEndGoal: 1
   requiredUnitsForCapture: 10
@@ -3383,6 +3413,67 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &3287408858338283997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4425483363762610933}
+  - component: {fileID: 4932638629336794840}
+  m_Layer: 0
+  m_Name: Enemy Cap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4425483363762610933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287408858338283997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6552749476317234570}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4932638629336794840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287408858338283997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -983578679
+      Data2: 1237036296
+      Data3: -1172710728
+      Data4: 764273800
+    Path: event:/SX/UI/sx_ui_enemy_capture
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3359935430673439074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,6 +4149,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f6ba7eb6f39d245a5cafdfd990b56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAllyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1512876945047877122}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4932638629336794840}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initialFaction: 1
   isEndGoal: 0
   requiredUnitsForCapture: 5
@@ -5678,6 +5799,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f6ba7eb6f39d245a5cafdfd990b56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAllyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1512876945047877122}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4932638629336794840}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initialFaction: 2
   isEndGoal: 0
   requiredUnitsForCapture: 5
@@ -7298,6 +7449,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f6ba7eb6f39d245a5cafdfd990b56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAllyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1512876945047877122}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4932638629336794840}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initialFaction: 0
   isEndGoal: 0
   requiredUnitsForCapture: 5
@@ -8918,6 +9099,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f6ba7eb6f39d245a5cafdfd990b56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAllyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1512876945047877122}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4932638629336794840}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initialFaction: 0
   isEndGoal: 0
   requiredUnitsForCapture: 5
@@ -10538,6 +10749,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f6ba7eb6f39d245a5cafdfd990b56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAllyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1512876945047877122}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4932638629336794840}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initialFaction: 2
   isEndGoal: 1
   requiredUnitsForCapture: 10
@@ -12356,6 +12597,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f6ba7eb6f39d245a5cafdfd990b56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAllyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1512876945047877122}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyCapture:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4932638629336794840}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initialFaction: 0
   isEndGoal: 0
   requiredUnitsForCapture: 5
@@ -14866,6 +15137,67 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &5315706732978650608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8879308039502787779}
+  - component: {fileID: 1512876945047877122}
+  m_Layer: 0
+  m_Name: Friendlty Cap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8879308039502787779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315706732978650608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6552749476317234570}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1512876945047877122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315706732978650608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -873173541
+      Data2: 1212213014
+      Data3: 1132851874
+      Data4: 1004856718
+    Path: event:/SX/UI/sx_ui_capture
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5357848023108778784
 GameObject:
   m_ObjectHideFlags: 0
@@ -39967,6 +40299,8 @@ Transform:
   - {fileID: 3625638993726562886}
   - {fileID: 3625638993759708172}
   - {fileID: 3625638995043915568}
+  - {fileID: 8879308039502787779}
+  - {fileID: 4425483363762610933}
   m_Father: {fileID: 6295374908526669294}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
