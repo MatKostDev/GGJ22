@@ -52,7 +52,11 @@ public class UnitPanel : MonoBehaviour
         {
             _selectedUnit = null;
             SetPanelActive(false);
+            return;
         }
+        healthBar.number.text = (_selectedUnit.health.GetHealth()).ToString();
+        healthBar.bar.value = _selectedUnit.health.GetHealthPercentage();
+        powerText.text = _selectedUnit.gun.GetBulletDamage().ToString();
     }
 
     void SetPanelActive(bool b)
@@ -65,12 +69,15 @@ public class UnitPanel : MonoBehaviour
     void _SelectUnit(Unit unit)
     {
         _selectedUnit = unit;
-        unitName.text = unit.unitName;
-        healthBar.number.text = (unit.health.GetHealth()).ToString();
-        healthBar.bar.value = unit.health.GetHealthPercentage();
-        powerText.text = unit.gun.GetBulletDamage().ToString();
+        unitName.text = _selectedUnit.unitName;
+
         SetPanelActive(true);
         OnSelectUnit.Invoke();
+    }
+
+    public Unit GetSelectedUnit()
+    {
+        return _selectedUnit;
     }
 
     public static void SelectUnit(Unit unit)

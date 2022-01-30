@@ -58,12 +58,19 @@ public class PlayerMotor : MonoBehaviour
 
 	const float SLOPE_RIDE_DOWNWARDS_FORCE_STRENGTH = 35f;
 
-    const float DEADZONE_THRESHOLD = 0.2f;
+    const float FRICTIONLESS_TIME_AFTER_LANDING = 0.2f;
+
+	const float DEADZONE_THRESHOLD = 0.2f;
 
 	Transform           m_moveTarget;
     CharacterController m_characterController;
 
-    bool m_isGrounded = true;
+    GrappleHook m_grapplingHook;
+
+    float m_groundedTimeElapsed = 0f;
+
+	bool m_isGrounded  = true;
+    bool m_isGrappling = false;
 
 	float m_lastTimeJumpPerformed = -999f;
 
@@ -135,6 +142,7 @@ public class PlayerMotor : MonoBehaviour
 	{
 		m_moveTarget          = transform;
         m_characterController = GetComponent<CharacterController>();
+        m_grapplingHook       = GetComponent<GrappleHook>();
 	}
 
 	void Start()
@@ -155,20 +163,31 @@ public class PlayerMotor : MonoBehaviour
         Vector3 moveDirX = m_moveTarget.right   * horizontalAxis;
 		Vector3 moveDirY = m_moveTarget.forward * verticalAxis;
 
-		UpdateCurrentMovementVariables();
+        Vector3 constraintDisplacement = Vector3.zero;
 
-		if (verticalAxis > DEADZONE_THRESHOLD)
-		{
-			RotateVelocityByLookChange();
+        m_isGrappling = m_grapplingHook.IsGrappling;
+
+        if (m_isGrappling)
+        {
+            m_grapplingHook.UpdateGrappling(ref constraintDisplacement, ref m_velocity, moveDirX + moveDirY);
+        }
+        else
+        {
+            UpdateCurrentMovementVariables();
+
+            if (verticalAxis > DEADZONE_THRESHOLD)
+            {
+                RotateVelocityByLookChange();
+            }
+
+            ApplyFriction();
+
+            ProcessBasicMovement(moveDirX, moveDirY);
+
+            ApplyDeceleration(verticalAxis, horizontalAxis);
 		}
 
-		ApplyFriction();
-
-		ProcessBasicMovement(moveDirX, moveDirY);
-
-		ApplyDeceleration(verticalAxis, horizontalAxis);
-
-		m_velocity.y -= gravityStrength * Time.deltaTime; //apply gravity
+        m_velocity.y -= gravityStrength * Time.deltaTime; //apply gravity
 
 		//if the player is grounded, downwards velocity should be reset
 		if (m_isGrounded && m_velocity.y < 0f)
@@ -178,14 +197,14 @@ public class PlayerMotor : MonoBehaviour
 
 		if (a_jump)
 		{
-			TryJump();
+			TryJump(a_inputAxes);
 		}
 
 		m_velocity.y = Mathf.Max(m_velocity.y, terminalDownVelocity);
 
 		ApplySpeedCap();
 
-		m_characterController.Move(m_velocity * Time.deltaTime);
+		m_characterController.Move(m_velocity * Time.deltaTime + constraintDisplacement);
 
 		//after standard movement stuff is done, check if the player should be glued to a slope
 		PerformOnSlopeLogic();
@@ -199,11 +218,22 @@ public class PlayerMotor : MonoBehaviour
 
 		m_isGrounded = m_characterController.isGrounded;
 
-        if (m_isGrounded && !wasGrounded)
+        if (m_isGrounded)
         {
-            onLanded?.Invoke();
+            if (wasGrounded)
+            {
+                m_groundedTimeElapsed += Time.deltaTime;
+            }
+            else
+            {
+                onLanded?.Invoke();
+			}
         }
-    }
+        else
+        {
+            m_groundedTimeElapsed = 0f;
+        }
+	}
 
 	void UpdateCurrentMovementVariables()
 	{
@@ -294,6 +324,11 @@ public class PlayerMotor : MonoBehaviour
 
 	void ApplyFriction()
 	{
+        if (m_isGrounded && m_groundedTimeElapsed < FRICTIONLESS_TIME_AFTER_LANDING)
+        {
+            return;
+        }
+
 		Vector3 newVelocityXZ = m_velocity;
 		newVelocityXZ.y = 0f;
 
@@ -309,14 +344,23 @@ public class PlayerMotor : MonoBehaviour
 		}
 	}
 
-	void TryJump()
+	void TryJump(in Vector2 a_inputAxes)
 	{
-		if (!m_isGrounded || m_lastTimeJumpPerformed + JUMP_COOLDOWN_TIME > Time.time)
+		if ((!m_isGrounded && !m_isGrappling) || m_lastTimeJumpPerformed + JUMP_COOLDOWN_TIME > Time.time)
 		{
 			return;
 		}
-        
-		m_velocity.y = m_jumpVelocityY;
+
+        if (m_isGrappling)
+        {
+            m_grapplingHook.PerformGrappleJump(ref m_velocity, a_inputAxes);
+
+            m_isGrappling = false;
+        }
+        else
+		{
+			m_velocity.y = m_jumpVelocityY;
+		}
 
         m_lastTimeJumpPerformed = Time.time;
 

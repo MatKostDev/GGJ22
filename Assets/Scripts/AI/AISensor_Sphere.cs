@@ -4,18 +4,44 @@ using UnityEngine;
 
 public class AISensor_Sphere : AISensor
 {
-    [SerializeField] Vector2 area = new Vector2(5.0f, 10.0f);
-    private void OnDrawGizmosSelected()
+    [SerializeField] List<string> focusTags = new List<string>();
+
+    GameObject _sensedObject = null;
+
+    private void Update()
     {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, area.y);
-        Gizmos.DrawWireSphere(transform.position, area.x);
+        if (_sensedObject != null && !_sensedObject.activeSelf)
+            _sensedObject = null;
     }
     public override bool Sense()
     {
-        var dist = DistanceToPlayer(transform);
-        if (dist <= area.y && dist >= area.x)
+        if (_sensedObject != null)
             return SetSenseTime();
         return false;
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (!focusTags.Contains(other.tag))
+            return;
+
+        if (_sensedObject == null || (transform.position - _sensedObject.transform.position).magnitude > (transform.position - other.transform.position).magnitude)
+        {
+            _sensedObject = other.gameObject;
+            Debug.Log(_sensedObject.name);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!focusTags.Contains(other.tag))
+            return;
+
+        if (_sensedObject == other.gameObject)
+            _sensedObject = null;
+    }
+
+    public GameObject GetSensedObject()
+    {
+        return _sensedObject;
     }
 }

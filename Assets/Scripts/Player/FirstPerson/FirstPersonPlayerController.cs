@@ -30,6 +30,7 @@ public class FirstPersonPlayerController : PlayerControlType
 
     Transform         m_cameraTransform;
     PlayerObjectCarry m_carryObject;
+    GrappleHook       m_grappleHook;
 
     FirstPersonPlayerData m_playerData;
 
@@ -69,6 +70,7 @@ public class FirstPersonPlayerController : PlayerControlType
 
         m_cameraTransform = m_playerData.PlayerCamera.transform;
         m_carryObject     = m_playerData.ObjectCarry;
+        m_grappleHook     = m_playerData.Grapple;
 
         m_lastFramePosition = transform.position;
 
@@ -88,6 +90,19 @@ public class FirstPersonPlayerController : PlayerControlType
 
         m_playerData.RotationController.UpdateRotations(lookAxis);
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (m_grappleHook.IsGrappling)
+            {
+                //this is jank but ye
+                jump = true;
+            }
+            else
+            {
+                m_grappleHook.FireGrapple(m_cameraTransform.position, m_cameraTransform.forward);
+            }
+        }
+
         //movement
         if (m_canMove)
         {
@@ -100,9 +115,21 @@ public class FirstPersonPlayerController : PlayerControlType
             m_playerData.Motor.Move(moveAxis, jump);
         }
 
+        if (m_grappleHook.IsGrappling)
+        {
+            if (Input.GetKey(KeyCode.Q))
+            {
+                m_grappleHook.AddSlack();
+            }
+            if (Input.GetKey(KeyCode.E))
+            {
+                m_grappleHook.ReduceSlack();
+            }
+        }
+
         m_carryObject.UpdateCarrying(m_cameraTransform.forward, m_cameraTransform.position);
 
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(0))
         {
             if (m_carryObject.IsCarrying)
             {
@@ -161,6 +188,12 @@ public class FirstPersonPlayerController : PlayerControlType
 
         var motor = FirstPersonPlayerData.Instance.Motor;
 
+        if (m_grappleHook.IsGrappling)
+        {
+            m_grappleHook.DetachGrapple();
+        }
+
+        motor.ResetVelocity();
         motor.Teleport(m_spawnPosition);
     }
 

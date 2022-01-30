@@ -76,6 +76,14 @@ public class CarriableObject : MonoBehaviour
             m_outline.enabled = false;
         }
 
+        if (!m_isCarried)
+        {
+            if (Physics.BoxCast(boxcastPoint.position, boxcastSize, Vector3.down, out var castHit, Quaternion.identity))
+            {
+                m_desiredPosition.y = castHit.point.y + boxcastSize.y;
+            }
+        }
+
         m_showOutline = false;
     }
 

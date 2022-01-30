@@ -11,6 +11,9 @@ public class Turret : MonoBehaviour
     TurretDetection detection;
 
     [SerializeField]
+    WeaponManager weaponManager;
+
+    [SerializeField]
     LayerMask rayCheckLayers;
 
     void Update()
@@ -49,6 +52,8 @@ public class Turret : MonoBehaviour
         if (closestEnemy)
         {
             barrelTransform.LookAt(closestEnemy);
+
+            weaponManager.OnPrimaryWeapon();
         }
     }
 }
