@@ -54,7 +54,6 @@ MonoBehaviour:
   primaryWeapon: {fileID: 2526548451741251848}
   ownerEntity: {fileID: 0}
   canAttack: 1
-  _Debug: 0
 --- !u!1 &2526548451741251849
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   poolSize: 3
-  bulletSpeed: 5
+  bulletSpeed: 15
   bulletPrefab: {fileID: 2791174852078915802, guid: 415fde12dac8b8d40a17f5f8906bfef2, type: 3}
   bulletEmitterPoints:
   - {fileID: 2526548452311456866}
@@ -132,6 +131,7 @@ GameObject:
   - component: {fileID: 2526548451750598177}
   - component: {fileID: 2526548451750598178}
   - component: {fileID: 475210711}
+  - component: {fileID: 706116336605477072}
   m_Layer: 17
   m_Name: Enemy Unit
   m_TagString: EUnit
@@ -316,6 +316,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 706116336605477072}
+        m_TargetAssemblyTypeName: ResourceDropEmitter, Assembly-CSharp
+        m_MethodName: EmitLoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &475210711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -332,6 +344,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &706116336605477072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526548451750598201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 402bf94b525a60346b2b9c91a3026c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPrefab: {fileID: 4311501926434618549, guid: 79133b3516a6dd943856220224081ad1, type: 3}
+  numDropsToEmit: 5
 --- !u!1 &2526548452311456867
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +632,22 @@ PrefabInstance:
       propertyPath: m_text
       value: S
       objectReference: {fileID: 0}
+    - target: {fileID: 5056221834058711616, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056221834058711616, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056221834058711616, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056221834058711616, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.a
       value: 0.6117647
@@ -626,6 +668,14 @@ PrefabInstance:
       propertyPath: unit
       value: 
       objectReference: {fileID: 2526548451750598177}
+    - target: {fileID: 5056221835089109277, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056221835089109277, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
 --- !u!224 &7294517026288614891 stripped
