@@ -7,18 +7,17 @@ using UnityEngine.Events;
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] float downtime = 0.25f;
-    public UnityEvent OnChangeWeapon;
     public UnityEvent OnBeginAttack;
     public UnityEvent OnFinishAttack;
 
     [Header("References")]
     [SerializeField] Weapon primaryWeapon = null;
-    [SerializeField] Weapon secondaryWeapon = null;
     [SerializeField] GameObject ownerEntity = null;
 
     [HideInInspector] public bool canAttack = true;
 
     float _internalDowntime = 0.0f;
+    public bool _Debug = false;
 
 
     private void Awake()
@@ -28,6 +27,11 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
+        if (_Debug)
+        {
+            _Debug = false;
+            OnPrimaryWeapon();
+        }
         _internalDowntime += Time.deltaTime;
         if (_internalDowntime >= downtime)
             OnFinishAttack.Invoke();
@@ -42,32 +46,8 @@ public class WeaponManager : MonoBehaviour
         primaryWeapon.Attack();
     }
 
-    public void OnSecondaryWeapon()
-    {
-        if (!secondaryWeapon.gameObject.activeSelf || !secondaryWeapon.CanAttack())
-            return;
-        _internalDowntime = 0.0f;
-        OnBeginAttack.Invoke();
-        secondaryWeapon.Attack();
-    }
-
-    public void SetSecondaryWeapon(Weapon weapon)
-    {
-        secondaryWeapon = weapon;
-    }
-
-    public void ActivateSecondaryWeapon()
-    {
-        secondaryWeapon.gameObject.SetActive(true);
-    }
-
     public bool CanPrimaryAttack()
     {
         return primaryWeapon.CanAttack();
     }
-    public bool CanSecondaryAttack()
-    {
-        return secondaryWeapon.CanAttack();
-    }
-
 }

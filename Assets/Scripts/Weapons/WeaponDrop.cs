@@ -72,7 +72,7 @@ public class WeaponDrop : MonoBehaviour
         IEnumerator Wait()
         {
             yield return new WaitForSeconds(0.5f);
-            wm.ActivateSecondaryWeapon();
+            //wm.ActivateSecondaryWeapon();
             Destroy(parentObject);
         }
         StartCoroutine(Wait());
