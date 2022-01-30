@@ -5644,6 +5644,7 @@ GameObject:
   - component: {fileID: 3625638993759708162}
   - component: {fileID: 3625638993759708173}
   - component: {fileID: 3625638993759708166}
+  - component: {fileID: 5393037623833026166}
   m_Layer: 0
   m_Name: ENEMY 2
   m_TagString: Untagged
@@ -7235,6 +7236,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
+--- !u!65 &5393037623833026166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625638993759708175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.82788, y: 28, z: 16.730625}
+  m_Center: {x: 1.9029825, y: 14, z: 2.3009067}
 --- !u!1 &3625638994772454096
 GameObject:
   m_ObjectHideFlags: 0
@@ -7250,6 +7264,7 @@ GameObject:
   - component: {fileID: 3625638994772454103}
   - component: {fileID: 3625638994772454102}
   - component: {fileID: 3625638994772454091}
+  - component: {fileID: 7388079234534124635}
   m_Layer: 0
   m_Name: NEUTRAL 1
   m_TagString: Untagged
@@ -8841,6 +8856,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
+--- !u!65 &7388079234534124635
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625638994772454096}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.82788, y: 28, z: 16.730625}
+  m_Center: {x: 1.9029825, y: 14, z: 2.3009067}
 --- !u!1 &3625638994781221667
 GameObject:
   m_ObjectHideFlags: 0
@@ -8856,6 +8884,7 @@ GameObject:
   - component: {fileID: 3625638994781221670}
   - component: {fileID: 3625638994781221665}
   - component: {fileID: 3625638994781221722}
+  - component: {fileID: 2499958890916845055}
   m_Layer: 0
   m_Name: NEUTRAL 3
   m_TagString: Untagged
@@ -10447,6 +10476,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
+--- !u!65 &2499958890916845055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625638994781221667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.82788, y: 28, z: 16.730625}
+  m_Center: {x: 1.9029825, y: 14, z: 2.3009067}
 --- !u!1 &3625638995043915571
 GameObject:
   m_ObjectHideFlags: 0
@@ -12280,6 +12322,7 @@ GameObject:
   - component: {fileID: 3625638995353639068}
   - component: {fileID: 3625638995353639071}
   - component: {fileID: 3625638995353639056}
+  - component: {fileID: 6970694052094323088}
   m_Layer: 0
   m_Name: NEUTRAL 2
   m_TagString: Untagged
@@ -13871,6 +13914,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
+--- !u!65 &6970694052094323088
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625638995353639065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.82788, y: 28, z: 16.730625}
+  m_Center: {x: 1.9029825, y: 14, z: 2.3009067}
 --- !u!1 &4343017474871534094
 GameObject:
   m_ObjectHideFlags: 0
