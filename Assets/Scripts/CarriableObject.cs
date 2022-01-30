@@ -121,6 +121,10 @@ public class CarriableObject : MonoBehaviour
         {
             m_desiredPosition.y = castHit.point.y + boxcastSize.y;
         }
+        else
+        {
+            Destroy(moveTarget.gameObject);
+        }
 
         onPlacedDown?.Invoke();
     }

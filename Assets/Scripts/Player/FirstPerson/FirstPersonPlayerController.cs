@@ -25,6 +25,13 @@ public class FirstPersonPlayerController : PlayerControlType
     [SerializeField]
     float maxMouseSens = 20f;
 
+    [Header("Reticle")]
+    [SerializeField]
+    Image reticle;
+
+    [SerializeField]
+    Color canGrappleReticleColor = Color.green;
+
     float m_currentFrameMouseX;
     float m_currentFrameMouseY;
 
@@ -39,6 +46,8 @@ public class FirstPersonPlayerController : PlayerControlType
     Vector3 m_lastFramePosition;
 
     Vector3 m_spawnPosition;
+
+    Color m_initialReticleColor;
 
     bool m_canMove = true;
 
@@ -75,6 +84,8 @@ public class FirstPersonPlayerController : PlayerControlType
         m_lastFramePosition = transform.position;
 
         m_spawnPosition = transform.position;
+
+        m_initialReticleColor = reticle.color;
     }
 
     public override void OnUpdate()
@@ -113,6 +124,15 @@ public class FirstPersonPlayerController : PlayerControlType
             }
 
             m_playerData.Motor.Move(moveAxis, jump);
+        }
+
+        if (m_grappleHook.HasValidGrapplePoint(m_cameraTransform.position, m_cameraTransform.forward))
+        {
+            reticle.color = canGrappleReticleColor;
+        }
+        else
+        {
+            reticle.color = m_initialReticleColor;
         }
 
         if (m_grappleHook.IsGrappling)

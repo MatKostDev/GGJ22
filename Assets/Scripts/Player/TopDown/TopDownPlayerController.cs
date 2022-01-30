@@ -30,6 +30,11 @@ public class TopDownPlayerController : PlayerControlType
     {
         Vector3 moveAxis = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
 
+        if (moveAxis.sqrMagnitude > 1f)
+        {
+            moveAxis = moveAxis.normalized;
+        }
+
         followObject.Translate(moveAxis * speed, Space.World);
         MoveUnit();
     }

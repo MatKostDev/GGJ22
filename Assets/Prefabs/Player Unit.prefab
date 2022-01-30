@@ -122,7 +122,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ae1009bab193194796d7189858ae5a9, type: 2}
+  - {fileID: 2100000, guid: fe055cf592297794f92e3144f818769b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,8 +183,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 5
+  m_Acceleration: 14
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -639,11 +639,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.g
-      value: 0.7735849
+      value: 0.7924528
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.r
-      value: 0.10909532
+      value: 0.4623695
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109266, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: unit
