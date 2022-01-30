@@ -24,7 +24,17 @@ public class Health : MonoBehaviour
     {
         return health;
     }
-    public void SetToMaxHealth() {
+    public float GetMaxHealth()
+    {
+        return _maxHP;
+    }
+    public float GetHealthPercentage()
+    {
+        return health / _maxHP;
+    }
+
+    public void SetToMaxHealth()
+    {
         health = _maxHP;
     }
     public virtual void Die()
@@ -34,8 +44,13 @@ public class Health : MonoBehaviour
     {
         OnTakeDamage.Invoke();
         health -= damage;
-        if (health <= 0.5f)
+        if (IsDead())
             OnDie.Invoke();
+    }
+
+    public bool IsDead()
+    {
+        return health <= 0.5f;
     }
 
 }
