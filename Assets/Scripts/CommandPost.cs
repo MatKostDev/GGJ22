@@ -97,8 +97,6 @@ public class CommandPost : MonoBehaviour
             {
                 s_numControlledEnemy++;
 
-                Debug.Log(s_numControlledEnemy);
-
                 if (oldFaction == FactionType.Friendly)
                 {
                     s_numControlledAlly--;
@@ -144,8 +142,6 @@ public class CommandPost : MonoBehaviour
 
         if (isEndGoal)
         {
-            Debug.Log(s_numControlledEnemy + " out of " + m_totalNumCapturable);
-
             if ((otherFaction.FactionType == FactionType.Enemy && s_numControlledEnemy < m_totalNumCapturable)
                 || (otherFaction.FactionType == FactionType.Friendly && s_numControlledAlly < m_totalNumCapturable))
             {
