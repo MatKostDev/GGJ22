@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_resource.bank
   Name: sx_resource
   StudioPath: bank:/SX/sx_resource
-  lastModified: 637791178528926259
+  lastModified: 637791476311323924
   FileSizes:
   - Name: Desktop
     Value: 6208
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_plr_fps.bank
   Name: sx_plr_fps
   StudioPath: bank:/SX/sx_plr_fps
-  lastModified: 637791249280464620
+  lastModified: 637791476311303917
   FileSizes:
   - Name: Desktop
     Value: 93408
@@ -270,7 +270,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637791178528856294
+  lastModified: 637791476310693780
   FileSizes:
   - Name: Desktop
     Value: 7418
@@ -290,7 +290,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_troop.bank
   Name: sx_troop
   StudioPath: bank:/SX/sx_troop
-  lastModified: 637791178528926259
+  lastModified: 637791476311333925
   FileSizes:
   - Name: Desktop
     Value: 85056
@@ -310,7 +310,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/mx_menu.bank
   Name: mx_menu
   StudioPath: bank:/MX/mx_menu
-  lastModified: 637791178528976228
+  lastModified: 637791476311283914
   FileSizes:
   - Name: Desktop
     Value: 1280800
@@ -357,7 +357,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_plr_rts.bank
   Name: sx_plr_rts
   StudioPath: bank:/SX/sx_plr_rts
-  lastModified: 637791178528876282
+  lastModified: 637791476311313921
   FileSizes:
   - Name: Desktop
     Value: 15392
@@ -455,7 +455,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_ui.bank
   Name: sx_ui
   StudioPath: bank:/SX/sx_ui
-  lastModified: 637791178528956247
+  lastModified: 637791476311353929
   FileSizes:
   - Name: Desktop
     Value: 38816
@@ -625,7 +625,7 @@ MonoBehaviour:
   - {fileID: -4959783436427528287}
   StringsBanks:
   - {fileID: 7516055746553466923}
-  cacheTime: 637791249280464620
+  cacheTime: 637791476311353929
   cacheVersion: 10
 --- !u!114 &564564878072084197
 MonoBehaviour:
@@ -666,7 +666,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_turret.bank
   Name: sx_turret
   StudioPath: bank:/SX/sx_turret
-  lastModified: 637791178528936256
+  lastModified: 637791476311353929
   FileSizes:
   - Name: Desktop
     Value: 220544
@@ -929,7 +929,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/mx_gameplay.bank
   Name: mx_gameplay
   StudioPath: bank:/MX/mx_gameplay
-  lastModified: 637791178529635865
+  lastModified: 637791476311173894
   FileSizes:
   - Name: Desktop
     Value: 6451360
@@ -949,7 +949,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_amb.bank
   Name: sx_amb
   StudioPath: bank:/SX/sx_amb
-  lastModified: 637791178528866295
+  lastModified: 637791476311293915
   FileSizes:
   - Name: Desktop
     Value: 88544
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637791249280454615
+  lastModified: 637791476310693780
   FileSizes:
   - Name: Desktop
     Value: 3112
