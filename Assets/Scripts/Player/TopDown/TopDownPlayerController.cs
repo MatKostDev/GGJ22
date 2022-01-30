@@ -11,7 +11,9 @@ public class TopDownPlayerController : PlayerControlType
     [SerializeField] UnityEvent SwappedFrom = null;
     [SerializeField] UnityEvent OnSetUnitDestination = null;
     [SerializeField] float speed = 0.5f;
+    [SerializeField] float scrollSpeed = 8.0f;
     [SerializeField] LayerMask layerMask = 0;
+    [SerializeField] Vector2 scrollMinMax = new Vector2(20.0f, 69.0f);
 
     [Header("References")]
     [SerializeField] Animator unitPanelAnimator = null;
@@ -23,6 +25,7 @@ public class TopDownPlayerController : PlayerControlType
     Camera _mainCamera = null;
     private void Start()
     {
+        //scrollMinMax.x = followObject.transform.localPosition.x;
         _yOffset = followObject.position.y;
         _mainCamera = Camera.main;
     }
@@ -31,12 +34,24 @@ public class TopDownPlayerController : PlayerControlType
         Vector3 moveAxis = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
 
         if (moveAxis.sqrMagnitude > 1f)
-        {
             moveAxis = moveAxis.normalized;
-        }
 
+        moveAxis += new Vector3(0.0f, Zoom(), 0.0f);
         followObject.Translate(moveAxis * speed * Time.deltaTime, Space.World);
         MoveUnit();
+    }
+
+    float Zoom()
+    {
+        var y = Input.mouseScrollDelta.y;
+        var oldY = followObject.transform.localPosition.y;
+        if (Mathf.Abs(y) <= 0.3f)
+            return 0.0f;
+        float scrollValue = -y * scrollSpeed;
+        oldY += scrollValue;
+        if(oldY <= scrollMinMax.x || oldY >= scrollMinMax.y)
+            return 0.0f;
+        return scrollValue;
     }
 
     void MoveUnit()
@@ -50,7 +65,7 @@ public class TopDownPlayerController : PlayerControlType
 
         Vector3 position = Vector3.zero;
 
-        if (Physics.Raycast(ray, out hitInfo, 100.0f, layerMask))
+        if (Physics.Raycast(ray, out hitInfo, 1000.0f, layerMask))
         {
             position = hitInfo.point;
             unit.SetDestination(position);
