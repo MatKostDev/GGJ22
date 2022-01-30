@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8964942610102805927}
   - component: {fileID: 1724530051560488946}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Troop shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4214557926536542957}
   - component: {fileID: 3874775672975480789}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Troop footstep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7446588901838501166}
   - component: {fileID: 7446588901838501167}
-  m_Layer: 18
+  m_Layer: 17
   m_Name: Weapon Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7446588902025876337}
   - component: {fileID: 7446588902025876110}
-  m_Layer: 18
+  m_Layer: 17
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 7446588902035406247}
   - component: {fileID: 7446588902035406244}
   - component: {fileID: 4920045468057797952}
-  m_Layer: 18
+  m_Layer: 17
   m_Name: Enemy Unit
   m_TagString: EUnit
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 7446588902989645735}
   - component: {fileID: 7446588902989645739}
   - component: {fileID: 7446588902989645736}
-  m_Layer: 18
+  m_Layer: 17
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446588903669217252}
-  m_Layer: 18
+  m_Layer: 17
   m_Name: Bullet Emitter Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3175920354676879908}
   - component: {fileID: 8354077523338938122}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Troop spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3521625622534249564}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: FMOD Emitters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7194348762589838571}
   - component: {fileID: 1006244287096492652}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Troop death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056221833896710186, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Layer
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5056221833896710187, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Pivot.x
@@ -934,7 +934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056221834058711618, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Layer
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.a
@@ -958,7 +958,7 @@ PrefabInstance:
       objectReference: {fileID: 7446588902035406247}
     - target: {fileID: 5056221835089109276, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Layer
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109277, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_LocalScale.x
