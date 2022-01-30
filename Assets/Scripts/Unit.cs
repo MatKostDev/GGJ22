@@ -13,11 +13,11 @@ public class Unit : MonoBehaviour
     public Gun gun;
     [SerializeField] NavMeshAgent agent = null;
 
-
     public void SetDestination(Vector3 dest)
     {
         if (!canMove)
             return;
+        agent.updateRotation = true;
         agent.SetDestination(dest);
     }
 
