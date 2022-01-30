@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2791174852078915802
+--- !u!1 &3174253494259242737
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5746910417332417080}
-  - component: {fileID: 4222585284564294008}
-  - component: {fileID: 8555839098055432265}
-  - component: {fileID: 4974149703315464140}
-  - component: {fileID: 1765519896361176564}
-  - component: {fileID: 2510499113334979533}
+  - component: {fileID: 5003543793830507539}
+  - component: {fileID: 3470211464353587027}
+  - component: {fileID: 8938935342477188706}
+  - component: {fileID: 5743974965641484775}
+  - component: {fileID: 1310946600159906783}
+  - component: {fileID: 2911046804171931110}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: EBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &5746910417332417080
+--- !u!4 &5003543793830507539
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2791174852078915802}
+  m_GameObject: {fileID: 3174253494259242737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 35.5, y: 4.111, z: 3.28}
   m_LocalScale: {x: 0.14941502, y: 0.14941502, z: 0.14941502}
@@ -35,21 +35,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4222585284564294008
+--- !u!33 &3470211464353587027
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2791174852078915802}
+  m_GameObject: {fileID: 3174253494259242737}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8555839098055432265
+--- !u!23 &8938935342477188706
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2791174852078915802}
+  m_GameObject: {fileID: 3174253494259242737}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,26 +84,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4974149703315464140
+--- !u!135 &5743974965641484775
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2791174852078915802}
+  m_GameObject: {fileID: 3174253494259242737}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1765519896361176564
+--- !u!114 &1310946600159906783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2791174852078915802}
+  m_GameObject: {fileID: 3174253494259242737}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0a3c579cb075d449a0c88a9a9873f33, type: 3}
@@ -113,7 +113,7 @@ MonoBehaviour:
   OnDidDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2791174852078915802}
+      - m_Target: {fileID: 3174253494259242737}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -126,14 +126,14 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canDoDamage: 1
-  ignoreTag: Unit
---- !u!54 &2510499113334979533
+  ignoreTag: EUnit
+--- !u!54 &2911046804171931110
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2791174852078915802}
+  m_GameObject: {fileID: 3174253494259242737}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0

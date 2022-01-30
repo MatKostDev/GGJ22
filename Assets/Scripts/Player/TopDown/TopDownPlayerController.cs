@@ -20,9 +20,12 @@ public class TopDownPlayerController : PlayerControlType
     [SerializeField] CinemachineVirtualCamera vCam = null;
     [SerializeField] Transform followObject = null;
     [SerializeField] UnitPanel unitPanel = null;
+    [SerializeField] SquadPanel squadPanel = null;
 
     float _yOffset = 0.0f;
     Camera _mainCamera = null;
+
+    bool unitOrSquad = false;
     private void Start()
     {
         //scrollMinMax.x = followObject.transform.localPosition.x;
@@ -38,7 +41,10 @@ public class TopDownPlayerController : PlayerControlType
 
         moveAxis += new Vector3(0.0f, Zoom(), 0.0f);
         followObject.Translate(moveAxis * speed * Time.deltaTime, Space.World);
-        MoveUnit();
+        if (!unitOrSquad)
+            MoveUnit();
+        else
+            MoveSquad();
     }
 
     float Zoom()
@@ -49,28 +55,38 @@ public class TopDownPlayerController : PlayerControlType
             return 0.0f;
         float scrollValue = -y * scrollSpeed;
         oldY += scrollValue;
-        if(oldY <= scrollMinMax.x || oldY >= scrollMinMax.y)
+        if (oldY <= scrollMinMax.x || oldY >= scrollMinMax.y)
             return 0.0f;
         return scrollValue;
     }
 
-    void MoveUnit()
+    bool MoveUnit()
     {
         var unit = unitPanel.GetSelectedUnit();
         if (!Input.GetMouseButtonDown(1) || !unit || unit.CompareTag("EUnit") || !unit.CanMove())
-            return;
+            return false;
 
-        var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
-
-        Vector3 position = Vector3.zero;
-
-        if (Physics.Raycast(ray, out hitInfo, 1000.0f, layerMask))
+        var position = RaycastHelper();
+        if (position.magnitude > 0.0f)
         {
-            position = hitInfo.point;
             unit.SetDestination(position);
             OnSetUnitDestination.Invoke();
         }
+        return true;
+    }
+
+    bool MoveSquad()
+    {
+        var squad = squadPanel.GetSelectedSquad();
+        if (!Input.GetMouseButtonDown(1) || !squad || squad.CompareTag("EUnit"))
+            return false;
+        var position = RaycastHelper();
+        if (position.magnitude > 0.0f)
+        {
+            squad.SetDestination(position);
+            OnSetUnitDestination.Invoke();
+        }
+        return true;
     }
 
     public override void OnSwappedTo()
@@ -90,5 +106,25 @@ public class TopDownPlayerController : PlayerControlType
         vCam.Priority = 0;
         unitPanelAnimator.SetTrigger("Close");
         SwappedFrom.Invoke();
+    }
+
+    Vector3 RaycastHelper()
+    {
+        var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitInfo;
+
+        Vector3 position = Vector3.zero;
+        Physics.Raycast(ray, out hitInfo, 1000.0f, layerMask);
+        return hitInfo.point;
+    }
+
+    public void OnSelectUnit()
+    {
+        unitOrSquad = false;
+    }
+
+    public void OnSelectSquad()
+    {
+        unitOrSquad = true;
     }
 }
