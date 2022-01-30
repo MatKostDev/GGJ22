@@ -110,7 +110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   poolSize: 3
-  bulletSpeed: 15
+  bulletSpeed: 40
   bulletPrefab: {fileID: 2791174852078915802, guid: 415fde12dac8b8d40a17f5f8906bfef2, type: 3}
   bulletEmitterPoints:
   - {fileID: 2526548452311456866}
@@ -183,7 +183,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 470ca81c518d2724db97515c549c7e90, type: 2}
+  - {fileID: 2100000, guid: 0ebffb0b38e0182409d7c4b7f6ac344c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -244,8 +244,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 5
+  m_Acceleration: 14
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

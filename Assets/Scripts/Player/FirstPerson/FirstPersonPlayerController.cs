@@ -13,7 +13,7 @@ public class FirstPersonPlayerController : PlayerControlType
     [Header("Death Plane / Respawn")]
     [SerializeField]
     [Tooltip("Just for sanity, but the player shouldn't be able to fall below the map")]
-    float deathPlaneHeight = -50f;
+    float deathPlaneHeight = -120f;
 
     [Header("Mouse Sens")]
     [SerializeField]
@@ -24,6 +24,13 @@ public class FirstPersonPlayerController : PlayerControlType
 
     [SerializeField]
     float maxMouseSens = 20f;
+
+    [Header("Reticle")]
+    [SerializeField]
+    Image reticle;
+
+    [SerializeField]
+    Color canGrappleReticleColor = Color.green;
 
     float m_currentFrameMouseX;
     float m_currentFrameMouseY;
@@ -39,8 +46,13 @@ public class FirstPersonPlayerController : PlayerControlType
     Vector3 m_lastFramePosition;
 
     Vector3 m_spawnPosition;
+    Vector3 m_spawnRotation;
+
+    Color m_initialReticleColor;
 
     bool m_canMove = true;
+
+    float m_updateDelay = 0f;
 
     public float DeathPlaneHeight
     {
@@ -75,10 +87,19 @@ public class FirstPersonPlayerController : PlayerControlType
         m_lastFramePosition = transform.position;
 
         m_spawnPosition = transform.position;
+        m_spawnRotation = transform.eulerAngles;
+
+        m_initialReticleColor = reticle.color;
     }
 
     public override void OnUpdate()
     {
+        if (m_updateDelay > 0f)
+        {
+            m_updateDelay -= Time.deltaTime;
+            return;
+        }
+
         bool jump = Input.GetButtonDown("Jump");
 
         //rotation
@@ -97,7 +118,7 @@ public class FirstPersonPlayerController : PlayerControlType
                 //this is jank but ye
                 jump = true;
             }
-            else
+            else if (!m_carryObject.IsCarrying)
             {
                 m_grappleHook.FireGrapple(m_cameraTransform.position, m_cameraTransform.forward);
             }
@@ -113,6 +134,15 @@ public class FirstPersonPlayerController : PlayerControlType
             }
 
             m_playerData.Motor.Move(moveAxis, jump);
+        }
+
+        if (m_grappleHook.HasValidGrapplePoint(m_cameraTransform.position, m_cameraTransform.forward))
+        {
+            reticle.color = canGrappleReticleColor;
+        }
+        else
+        {
+            reticle.color = m_initialReticleColor;
         }
 
         if (m_grappleHook.IsGrappling)
@@ -161,6 +191,8 @@ public class FirstPersonPlayerController : PlayerControlType
         onSwappedTo?.Invoke();
 
         Invoke(nameof(UnpauseCarrying), 1f);
+
+        m_updateDelay = 0.8f;
     }
 
     public override void OnSwappedFrom()
@@ -195,6 +227,8 @@ public class FirstPersonPlayerController : PlayerControlType
 
         motor.ResetVelocity();
         motor.Teleport(m_spawnPosition);
+
+        m_playerData.RotationController.EulerRotation = m_spawnRotation;
     }
 
     public void UpdateMouseSens(float a_newSens)

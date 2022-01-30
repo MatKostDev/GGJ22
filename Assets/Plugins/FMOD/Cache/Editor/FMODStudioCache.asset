@@ -26,7 +26,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1005
 --- !u!114 &-6861277945823137447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_resource.bank
   Name: sx_resource
   StudioPath: bank:/SX/sx_resource
-  lastModified: 637791110625004610
+  lastModified: 637791178528926259
   FileSizes:
   - Name: Desktop
-    Value: 1488
+    Value: 6208
   Exists: 1
 --- !u!114 &-6534943483657998631
 MonoBehaviour:
@@ -62,10 +62,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_plr_fps.bank
   Name: sx_plr_fps
   StudioPath: bank:/SX/sx_plr_fps
-  lastModified: 637791110624984614
+  lastModified: 637791178528906266
   FileSizes:
   - Name: Desktop
-    Value: 3328
+    Value: 88768
   Exists: 1
 --- !u!114 &-6045431959471349369
 MonoBehaviour:
@@ -93,7 +93,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 211
 --- !u!114 &-5979526688296349567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,13 +114,13 @@ MonoBehaviour:
     Data4: 1845629794
   Banks:
   - {fileID: 1244513363176714464}
-  IsStream: 0
+  IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 16922
 --- !u!114 &-5919117112334842716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,60 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 647
+--- !u!114 &-5710252419745605827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/gamemode
+  m_EditorClassIdentifier: 
+  Name: gamemode
+  StudioPath: parameter:/gamemode
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 835921277
+    data2: 2256141561
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - FPS
+  - RTS
+  Exists: 1
+--- !u!114 &-5631822257847932915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MX/mx_gameplay_master
+  m_EditorClassIdentifier: 
+  Path: event:/MX/mx_gameplay_master
+  Guid:
+    Data1: -1544687041
+    Data2: 1123877135
+    Data3: -216887119
+    Data4: 1696625609
+  Banks:
+  - {fileID: 4297039862424075947}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 480000
 --- !u!114 &-5187309514225555719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +227,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 82
 --- !u!114 &-5042309752284241461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +254,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 55
 --- !u!114 &-4959783436427528287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,10 +270,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637791110624944640
+  lastModified: 637791178528856294
   FileSizes:
   - Name: Desktop
-    Value: 4636
+    Value: 7418
   Exists: 1
 --- !u!114 &-3736825009157613129
 MonoBehaviour:
@@ -237,10 +290,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_troop.bank
   Name: sx_troop
   StudioPath: bank:/SX/sx_troop
-  lastModified: 637791110624994611
+  lastModified: 637791178528926259
   FileSizes:
   - Name: Desktop
-    Value: 4248
+    Value: 85056
   Exists: 1
 --- !u!114 &-3712793717311599939
 MonoBehaviour:
@@ -257,10 +310,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/mx_menu.bank
   Name: mx_menu
   StudioPath: bank:/MX/mx_menu
-  lastModified: 637791110624954630
+  lastModified: 637791178528976228
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 1280800
   Exists: 1
 --- !u!114 &-3583943576817292776
 MonoBehaviour:
@@ -282,13 +335,13 @@ MonoBehaviour:
     Data4: -373778453
   Banks:
   - {fileID: 4581648641913088161}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 30000
 --- !u!114 &-3214549059028660909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,10 +357,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_plr_rts.bank
   Name: sx_plr_rts
   StudioPath: bank:/SX/sx_plr_rts
-  lastModified: 637791110625024597
+  lastModified: 637791178528876282
   FileSizes:
   - Name: Desktop
-    Value: 3786
+    Value: 15392
   Exists: 1
 --- !u!114 &-2980152952215988654
 MonoBehaviour:
@@ -335,7 +388,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 582
 --- !u!114 &-2948100536435572581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +439,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 734
 --- !u!114 &-2162082177860985053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,10 +455,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_ui.bank
   Name: sx_ui
   StudioPath: bank:/SX/sx_ui
-  lastModified: 637791110625014613
+  lastModified: 637791178528956247
   FileSizes:
   - Name: Desktop
-    Value: 3786
+    Value: 38816
   Exists: 1
 --- !u!114 &-747260590828643614
 MonoBehaviour:
@@ -433,7 +486,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 3854
 --- !u!114 &-433340773810239368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +513,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 5161
 --- !u!114 &-146631120159932481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +561,7 @@ MonoBehaviour:
   - {fileID: -3736825009157613129}
   - {fileID: 1244513363176714464}
   - {fileID: -2162082177860985053}
+  - {fileID: 4297039862424075947}
   EditorEvents:
   - {fileID: -3583943576817292776}
   - {fileID: 5049641383442047386}
@@ -515,7 +569,6 @@ MonoBehaviour:
   - {fileID: -5919117112334842716}
   - {fileID: 2041152956686388651}
   - {fileID: 2425167049085923109}
-  - {fileID: 2463127461375727696}
   - {fileID: 4732909471458924550}
   - {fileID: -5187309514225555719}
   - {fileID: -6045431959471349369}
@@ -530,47 +583,22 @@ MonoBehaviour:
   - {fileID: -7025809135501833885}
   - {fileID: -5042309752284241461}
   - {fileID: 1272962905894208851}
-  - {fileID: 318653640668939316}
   - {fileID: 1854980767655554778}
   - {fileID: 2272904413663624330}
+  - {fileID: -5631822257847932915}
+  - {fileID: 1775605815191768348}
   EditorParameters:
   - {fileID: 7736975017144577247}
   - {fileID: -2948100536435572581}
   - {fileID: -146631120159932481}
   - {fileID: 564564878072084197}
+  - {fileID: -5710252419745605827}
   MasterBanks:
   - {fileID: -4959783436427528287}
   StringsBanks:
   - {fileID: 7516055746553466923}
-  cacheTime: 637791110625024597
+  cacheTime: 637791178529635865
   cacheVersion: 10
---- !u!114 &318653640668939316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SX/UI/sx_ui_switch
-  m_EditorClassIdentifier: 
-  Path: event:/SX/UI/sx_ui_switch
-  Guid:
-    Data1: 1979563959
-    Data2: 1097790036
-    Data3: 206199739
-    Data4: 684809512
-  Banks:
-  - {fileID: -2162082177860985053}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &564564878072084197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,10 +638,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_turret.bank
   Name: sx_turret
   StudioPath: bank:/SX/sx_turret
-  lastModified: 637791110624994611
+  lastModified: 637791178528936256
   FileSizes:
   - Name: Desktop
-    Value: 5168
+    Value: 220544
   Exists: 1
 --- !u!114 &1272962905894208851
 MonoBehaviour:
@@ -641,7 +669,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 31
 --- !u!114 &1469841908265802810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,7 +696,34 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 750
+--- !u!114 &1775605815191768348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MX/mx_menu
+  m_EditorClassIdentifier: 
+  Path: event:/MX/mx_menu
+  Guid:
+    Data1: 1762261210
+    Data2: 1205457854
+    Data3: -1357416031
+    Data4: -160526451
+  Banks:
+  - {fileID: -3712793717311599939}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 96000
 --- !u!114 &1854980767655554778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,7 +750,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1364
 --- !u!114 &1902702694377751477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,7 +777,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 880
 --- !u!114 &2041152956686388651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,7 +804,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 112
 --- !u!114 &2272904413663624330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,7 +831,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1671
 --- !u!114 &2425167049085923109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,34 +858,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &2463127461375727696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SX/PLR/sx_plr_rts_waypoint_place
-  m_EditorClassIdentifier: 
-  Path: event:/SX/PLR/sx_plr_rts_waypoint_place
-  Guid:
-    Data1: 1861847940
-    Data2: 1090660172
-    Data3: 2024755330
-    Data4: -156253048
-  Banks:
-  - {fileID: -3214549059028660909}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Length: 370
 --- !u!114 &3605796180792046789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +885,27 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1005
+--- !u!114 &4297039862424075947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/mx_gameplay.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Proj/Build/Desktop/mx_gameplay.bank
+  Name: mx_gameplay
+  StudioPath: bank:/MX/mx_gameplay
+  lastModified: 637791178529635865
+  FileSizes:
+  - Name: Desktop
+    Value: 6451360
+  Exists: 1
 --- !u!114 &4581648641913088161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,10 +921,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/sx_amb.bank
   Name: sx_amb
   StudioPath: bank:/SX/sx_amb
-  lastModified: 637791110624964628
+  lastModified: 637791178528866295
   FileSizes:
   - Name: Desktop
-    Value: 1202
+    Value: 88544
   Exists: 1
 --- !u!114 &4732909471458924550
 MonoBehaviour:
@@ -904,7 +952,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 104
 --- !u!114 &5049641383442047386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +979,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 540
 --- !u!114 &7516055746553466923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,10 +995,10 @@ MonoBehaviour:
   Path: FMOD Proj/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637791110624954630
+  lastModified: 637791178528856294
   FileSizes:
   - Name: Desktop
-    Value: 2908
+    Value: 3074
   Exists: 1
 --- !u!114 &7736975017144577247
 MonoBehaviour:
@@ -1002,4 +1050,4 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 442

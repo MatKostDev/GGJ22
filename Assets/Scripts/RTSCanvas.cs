@@ -18,6 +18,12 @@ public class RTSCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!unit)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         transform.position = unit.transform.position + new Vector3(0.0f, _yOffset, 0.0f);
     }
 
