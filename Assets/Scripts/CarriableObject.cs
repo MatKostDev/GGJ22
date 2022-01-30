@@ -23,6 +23,9 @@ public class CarriableObject : MonoBehaviour
     [SerializeField]
     Vector3 boxcastSize;
 
+    [SerializeField]
+    Transform moveTarget;
+
     Collider m_collider;
 
     bool m_canBePlaced = false;
@@ -33,6 +36,11 @@ public class CarriableObject : MonoBehaviour
     bool m_showOutline = false;
 
     Vector3 m_desiredPosition;
+
+    public Transform MoveTarget
+    {
+        get => moveTarget;
+    }
 
     public Vector3 DesiredPosition
     {
@@ -52,12 +60,12 @@ public class CarriableObject : MonoBehaviour
 
         m_outline.enabled = false;
 
-        m_desiredPosition = transform.position;
+        m_desiredPosition = moveTarget.position;
     }
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, m_desiredPosition, moveSpeed * Time.deltaTime);
+        moveTarget.position = Vector3.Lerp(moveTarget.position, m_desiredPosition, moveSpeed * Time.deltaTime);
 
         if (m_showOutline || m_isCarried)
         {
@@ -88,7 +96,7 @@ public class CarriableObject : MonoBehaviour
 
         m_isCarried = true;
 
-        m_desiredPosition = transform.position;
+        m_desiredPosition = moveTarget.position;
 
         onPickedUp?.Invoke();
     }
@@ -99,7 +107,7 @@ public class CarriableObject : MonoBehaviour
 
         m_isCarried = false;
 
-        m_desiredPosition = transform.position;
+        m_desiredPosition = moveTarget.position;
 
         if (Physics.BoxCast(boxcastPoint.position, boxcastSize, Vector3.down, out var castHit, Quaternion.identity))
         {
@@ -111,6 +119,11 @@ public class CarriableObject : MonoBehaviour
 
     void OnTriggerEnter(Collider a_other)
     {
+        if (a_other.isTrigger)
+        {
+            return;
+        }
+
         m_canBePlaced = false;
 
         m_outline.OutlineColor = invalidColor;
@@ -118,6 +131,11 @@ public class CarriableObject : MonoBehaviour
 
     void OnTriggerStay(Collider a_other)
     {
+        if (a_other.isTrigger)
+        {
+            return;
+        }
+
         m_canBePlaced = false;
 
         m_outline.OutlineColor = invalidColor;
@@ -125,6 +143,11 @@ public class CarriableObject : MonoBehaviour
 
     void OnTriggerExit(Collider a_other)
     {
+        if (a_other.isTrigger)
+        {
+            return;
+        }
+
         m_canBePlaced = true;
 
         m_outline.OutlineColor = validColor;
