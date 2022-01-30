@@ -4060,7 +4060,6 @@ MonoBehaviour:
   primaryWeapon: {fileID: 1021018094}
   ownerEntity: {fileID: 0}
   canAttack: 1
-  _Debug: 0
 --- !u!1 &1061586511
 GameObject:
   m_ObjectHideFlags: 0

@@ -1176,6 +1176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrelTransform: {fileID: 5559537344106189788}
   detection: {fileID: 5559537343385031008}
+  weaponManager: {fileID: 5559537344106189791}
   rayCheckLayers:
     serializedVersion: 2
     m_Bits: 131073
@@ -3099,7 +3100,6 @@ MonoBehaviour:
   primaryWeapon: {fileID: 5559537343316943061}
   ownerEntity: {fileID: 5559537343805204330}
   canAttack: 1
-  _Debug: 0
 --- !u!1 &5559537344721073312
 GameObject:
   m_ObjectHideFlags: 0

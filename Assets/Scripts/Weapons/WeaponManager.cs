@@ -17,7 +17,6 @@ public class WeaponManager : MonoBehaviour
     [HideInInspector] public bool canAttack = true;
 
     float _internalDowntime = 0.0f;
-    public bool _Debug = false;
 
 
     private void Awake()
@@ -27,11 +26,6 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
-        if (_Debug)
-        {
-            _Debug = false;
-            OnPrimaryWeapon();
-        }
         _internalDowntime += Time.deltaTime;
         if (_internalDowntime >= downtime)
             OnFinishAttack.Invoke();
