@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CommandPost : MonoBehaviour
 {
+    public UnityEvent onAllyCapture  = new UnityEvent();
+    public UnityEvent onEnemyCapture = new UnityEvent();
+
     [SerializeField]
     FactionType initialFaction;
 
@@ -44,7 +48,7 @@ public class CommandPost : MonoBehaviour
         m_faction      = GetComponent<Faction>();
         m_meshRenderer = GetComponent<MeshRenderer>();
 
-        ChangeFaction(initialFaction);
+        ChangeFaction(initialFaction, false);
     }
 
     void Start()
@@ -59,7 +63,7 @@ public class CommandPost : MonoBehaviour
         }
     }
 
-    void ChangeFaction(FactionType a_newFaction)
+    void ChangeFaction(FactionType a_newFaction, bool a_playEvent = true)
     {
         m_faction.FactionType = a_newFaction;
 
@@ -75,6 +79,18 @@ public class CommandPost : MonoBehaviour
         }
 
         m_meshRenderer.material.SetColor("_LineColor", newColor);
+
+        if (a_playEvent)
+        {
+            if (a_newFaction == FactionType.Friendly)
+            {
+                onAllyCapture?.Invoke();
+            }
+            else if (a_newFaction == FactionType.Enemy)
+            {
+                onEnemyCapture?.Invoke();
+            }
+        }
     }
 
     void OnTriggerEnter(Collider a_other)

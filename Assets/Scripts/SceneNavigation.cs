@@ -12,6 +12,11 @@ public class SceneNavigation : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("FirstPersonTesting");
     }
+
+    public void ToMainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
     public void QuitGame()
     {
         Application.Quit();
