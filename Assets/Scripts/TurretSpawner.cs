@@ -20,6 +20,6 @@ public class TurretSpawner : Singleton<TurretSpawner>
 
     public void SpawnTurret()
     {
-
+        Instantiate(turretPrefab, spawnTransform.position, spawnTransform.rotation);
     }
 }
