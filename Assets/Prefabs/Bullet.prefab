@@ -126,7 +126,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canDoDamage: 1
-  ignoreTag: Player
+  ignoreTag: Unit
 --- !u!54 &2510499113334979533
 Rigidbody:
   m_ObjectHideFlags: 0
