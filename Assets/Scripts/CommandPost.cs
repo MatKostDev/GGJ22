@@ -91,6 +91,16 @@ public class CommandPost : MonoBehaviour
                 onEnemyCapture?.Invoke();
             }
         }
+
+        if (isEndGoal)
+        {
+            Invoke(nameof(LoadMainMenu), 1f);
+        }
+    }
+
+    void LoadMainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
     void OnTriggerEnter(Collider a_other)
