@@ -15,22 +15,21 @@ public class AIAction_CommandPost : AIAction
         CommandPost closest = GetClosestCommandPost(workingList);
 
         if (!closest)
-        {
             return;
-        }
 
+        var position = closest.transform.position + new Vector3(12.0f,0.0f,0.0f);
         foreach (var u in unitSpawner.units)
         {
             if (u == null)
                 continue;
-            u.SetDestination(closest.transform.position);
+            u.SetDestination(position);
         }
 
         foreach (var s in squadSpawner.squads)
         {
             if (s == null)
                 continue;
-            s.SetDestination(closest.transform.position);
+            s.SetDestination(position);
         }
         base.SelectAction();
     }
