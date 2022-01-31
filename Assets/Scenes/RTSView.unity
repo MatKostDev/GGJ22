@@ -10423,7 +10423,7 @@ MonoBehaviour:
   acitons:
   - {fileID: 951163773}
   sensingTimeRange: {x: 0, y: 0}
-  actionTimeRange: {x: 5, y: 5}
+  actionTimeRange: {x: 20, y: 20}
 --- !u!114 &951163773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10574,7 +10574,7 @@ MonoBehaviour:
   acitons:
   - {fileID: 952392920}
   sensingTimeRange: {x: 0, y: 0}
-  actionTimeRange: {x: 3, y: 3}
+  actionTimeRange: {x: 8, y: 8}
 --- !u!114 &952392920
 MonoBehaviour:
   m_ObjectHideFlags: 0
