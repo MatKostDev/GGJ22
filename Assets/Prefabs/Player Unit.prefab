@@ -355,7 +355,7 @@ MonoBehaviour:
       m_Calls: []
   poolSize: 3
   bulletSpeed: 40
-  bulletPrefab: {fileID: 2791174852078915802, guid: 415fde12dac8b8d40a17f5f8906bfef2, type: 3}
+  bulletPrefab: {fileID: 2791174852078915802, guid: 8c1b141d57bffd242ac287df674fbbae, type: 3}
   bulletEmitterPoints:
   - {fileID: 879719407736706660}
 --- !u!1 &879719407073895972
@@ -455,6 +455,7 @@ MonoBehaviour:
   agent: {fileID: 879719406150081573}
   parentTransform: {fileID: 879719406150081570}
   sphere: {fileID: 879719407073895977}
+  emitterPoint: {fileID: 879719407736706660}
 --- !u!114 &879719407073895975
 MonoBehaviour:
   m_ObjectHideFlags: 0

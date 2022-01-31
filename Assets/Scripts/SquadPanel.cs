@@ -11,7 +11,6 @@ public class SquadPanel : MonoBehaviour
     {
         [HideInInspector] public Squad squad;
         public Button button;
-        public TMPro.TextMeshProUGUI buttonText;
     }
     public UnityEvent OnSelectSquad;
     [Header("References")]
@@ -36,7 +35,6 @@ public class SquadPanel : MonoBehaviour
         {
             buttons[index].button.gameObject.SetActive(true);
             buttons[index].squad = s;
-            buttons[index].buttonText.text = s.squadName;
             index++;
         }
     }
