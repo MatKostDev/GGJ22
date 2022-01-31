@@ -1281,7 +1281,7 @@ MonoBehaviour:
       m_Calls: []
   poolSize: 3
   bulletSpeed: 40
-  bulletPrefab: {fileID: 2791174852078915802, guid: 415fde12dac8b8d40a17f5f8906bfef2, type: 3}
+  bulletPrefab: {fileID: 2791174852078915802, guid: 8c1b141d57bffd242ac287df674fbbae, type: 3}
   bulletEmitterPoints:
   - {fileID: 5462568304940770931}
 --- !u!1 &5462568304128129948
@@ -1380,7 +1380,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 25
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5462568304427568789
 MonoBehaviour:

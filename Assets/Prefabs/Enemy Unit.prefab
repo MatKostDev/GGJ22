@@ -604,6 +604,7 @@ MonoBehaviour:
   agent: {fileID: 7446588902035406245}
   parentTransform: {fileID: 7446588902035406242}
   sphere: {fileID: 7446588902989645737}
+  emitterPoint: {fileID: 7446588903669217252}
 --- !u!114 &7446588902989645735
 MonoBehaviour:
   m_ObjectHideFlags: 0
