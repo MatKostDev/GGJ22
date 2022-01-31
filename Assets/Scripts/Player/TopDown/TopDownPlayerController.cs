@@ -41,6 +41,12 @@ public class TopDownPlayerController : PlayerControlType
 
         moveAxis += new Vector3(0.0f, Zoom(), 0.0f);
         followObject.Translate(moveAxis * speed * Time.deltaTime, Space.World);
+
+        Vector3 newPosition = followObject.position;
+        newPosition.y = Mathf.Clamp(newPosition.y, scrollMinMax.x, scrollMinMax.y);
+
+        followObject.position = newPosition;
+        
         if (!unitOrSquad)
             MoveUnit();
         else
