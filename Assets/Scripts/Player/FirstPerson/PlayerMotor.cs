@@ -190,7 +190,7 @@ public class PlayerMotor : MonoBehaviour
         m_velocity.y -= gravityStrength * Time.deltaTime; //apply gravity
 
 		//if the player is grounded, downwards velocity should be reset
-		if (m_isGrounded && m_velocity.y < 0f)
+		if (m_isGrounded && m_velocity.y < 0f && !m_isGrappling)
 		{
 			m_velocity.y = GROUNDED_VELOCITY_Y;
 		}
