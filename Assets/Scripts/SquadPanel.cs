@@ -28,8 +28,7 @@ public class SquadPanel : MonoBehaviour
     void UpdateButtons()
     {
         foreach (var b in buttons)
-            if (b.squad == null)
-                b.button.gameObject.SetActive(false);
+            b.button.gameObject.SetActive(false);
         int index = 0;
         foreach (var s in squadSpawner.squads)
         {
