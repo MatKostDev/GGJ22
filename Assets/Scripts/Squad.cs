@@ -25,12 +25,6 @@ public class Squad : MonoBehaviour
         {
             if (!s.unit || !s.unit.gameObject.activeSelf)
                 continue;
-            s.unit.SetDestination(s.localStartPos);
-        }
-        foreach (var s in squadUnits)
-        {
-            if (!s.unit || !s.unit.gameObject.activeSelf)
-                continue;
             s.unit.SetDestination(dest);
         }
     }
