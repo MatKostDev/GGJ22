@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 879719406150081572}
   - component: {fileID: 3397260365881631936}
   - component: {fileID: 4408348403420542781}
-  - component: {fileID: 6086316295151833552}
   m_Layer: 18
   m_Name: Player Unit
   m_TagString: Unit
@@ -293,21 +292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 1
---- !u!111 &6086316295151833552
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879719406150081599}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &879719406159409935
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +784,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensorName: 
   tripped: 0
+--- !u!95 &7034266216536557856
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958906742148062086}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 329ad091c3197154792d4eec3b13a065, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7239584387585896198
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3219bccc7687ee945b1d883afb93e095, type: 3}
+--- !u!1 &6958906742148062086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3219bccc7687ee945b1d883afb93e095, type: 3}
+  m_PrefabInstance: {fileID: 7805416681802786519}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7771190282736763196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3219bccc7687ee945b1d883afb93e095, type: 3}
@@ -1161,7 +1169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109277, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.75
+      value: -3.19
       objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109277, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_AnchoredPosition.x
