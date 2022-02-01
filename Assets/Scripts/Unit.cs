@@ -17,7 +17,7 @@ public class Unit : MonoBehaviour
     [SerializeField] AIDecider attackDecider = null;
     public void SetDestination(Vector3 dest, bool attackMove = true)
     {
-        Debug.Log(attackMove);
+        //Debug.Log(attackMove);
         if (!canMove)
             return;
         attackDecider.overrideAllActions = attackMove;

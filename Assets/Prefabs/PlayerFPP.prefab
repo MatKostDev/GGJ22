@@ -742,7 +742,7 @@ MonoBehaviour:
   rayCheckDistance: 4
   layersToCheck:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 524289
 --- !u!114 &7324549247599481452
 MonoBehaviour:
   m_ObjectHideFlags: 0

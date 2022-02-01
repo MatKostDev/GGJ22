@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 1404571492220383889}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.722, z: 0}
-  m_LocalScale: {x: 0.75, y: 1.3695608, z: 0.75}
+  m_LocalScale: {x: 0.75, y: 1.6262509, z: 0.75}
   m_Children:
   - {fileID: 4865530334376465905}
   m_Father: {fileID: 5462568304905796610}
@@ -418,7 +418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4409465318789212374}
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.12084386, z: 0.22156996}
+  m_LocalPosition: {x: 0, y: 0.256, z: 0.22156996}
   m_LocalScale: {x: 6.000356, y: 7.1193967, z: 6.000355}
   m_Children: []
   m_Father: {fileID: 5462568304759996558}
@@ -1530,7 +1530,10 @@ MonoBehaviour:
   canMove: 1
   health: {fileID: 5462568304905796633}
   gun: {fileID: 5462568303409325006}
-  agent: {fileID: 0}
+  manualSensor: {fileID: 0}
+  move: {fileID: 0}
+  moveDecider: {fileID: 0}
+  attackDecider: {fileID: 0}
 --- !u!1 &5462568304427568790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3628,7 +3631,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5462568304940770932}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.102, y: 1.074, z: -0.11}
+  m_LocalPosition: {x: -0.102, y: 1.074, z: -0.251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5462568303409325005}
