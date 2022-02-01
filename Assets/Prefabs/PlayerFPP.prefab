@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58695715613f90d409586460d767d0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayCheckDistance: 4
+  rayCheckDistance: 5.5
   layersToCheck:
     serializedVersion: 2
     m_Bits: 524289
@@ -772,7 +772,7 @@ MonoBehaviour:
         m_CallState: 2
   grappleHitParticles: {fileID: 4847677937587823126, guid: f9658e69147339a478795df74d023112, type: 3}
   grappleCastRadius: 1
-  maxLength: 40
+  maxLength: 45
   slackAdjustmentSpeed: 18
   grappleJumpHeight: 1.5
   grappleMuzzle: {fileID: 7324549248312845028}
