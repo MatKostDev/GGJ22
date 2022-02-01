@@ -124,6 +124,9 @@ public class CommandPost : MonoBehaviour
 
     void LoadMainMenu()
     {
+	    Cursor.lockState = CursorLockMode.None;
+	    Cursor.visible   = true;
+
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
