@@ -46,19 +46,12 @@ public class PlayerObjectCarry : MonoBehaviour
     {
         if (!Physics.Raycast(a_position, a_direction, out var rayHit, rayCheckDistance, layersToCheck))
         {
-            Debug.Log("buggin");
             return;
         }
 
         if (!rayHit.transform.TryGetComponent<CarriableObject>(out var hitCarriable))
         {
-            Debug.Log("on a");
             return;
-        }
-
-        if (!a_pickUpIfValid)
-        {
-            Debug.Log("stack");
         }
 
         hitCarriable.OnHover();
