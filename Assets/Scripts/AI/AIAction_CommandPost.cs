@@ -17,7 +17,7 @@ public class AIAction_CommandPost : AIAction
         if (!closest)
             return;
 
-        var position = closest.transform.position + new Vector3(12.0f,0.0f,0.0f);
+        var position = closest.transform.position + new Vector3(10.0f,0.0f,0.0f);
         foreach (var u in unitSpawner.units)
         {
             if (u == null)

@@ -19,13 +19,13 @@ public class Squad : MonoBehaviour
             s.localStartPos = s.unit.transform.localPosition;
     }
 
-    public void SetDestination(Vector3 dest)
+    public void SetDestination(Vector3 dest, bool attackMove = true)
     {
         foreach (var s in squadUnits)
         {
             if (!s.unit || !s.unit.gameObject.activeSelf)
                 continue;
-            s.unit.SetDestination(dest);
+            s.unit.SetDestination(dest,attackMove);
         }
     }
 
@@ -40,9 +40,7 @@ public class Squad : MonoBehaviour
         foreach (var s in squadUnits)
         {
             if (!s.unit)
-            {
                 continue;
-            }
             if (s.unit.gameObject.activeSelf)
                 return false;
         }

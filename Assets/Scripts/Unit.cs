@@ -11,14 +11,19 @@ public class Unit : MonoBehaviour
     [Header("References")]
     public Health health;
     public Gun gun;
-    [SerializeField] NavMeshAgent agent = null;
-
-    public void SetDestination(Vector3 dest)
+    [SerializeField] AISensor_Manual manualSensor = null;
+    [SerializeField] AIAction_Move move = null;
+    [SerializeField] AIDecider moveDecider = null;
+    [SerializeField] AIDecider attackDecider = null;
+    public void SetDestination(Vector3 dest, bool attackMove = true)
     {
-        if (!canMove || !agent)
+        Debug.Log(attackMove);
+        if (!canMove)
             return;
-        agent.updateRotation = true;
-        agent.SetDestination(dest);
+        attackDecider.overrideAllActions = attackMove;
+        moveDecider.overrideAllActions = !attackMove;
+        move.destination = dest;
+        manualSensor.TripSensor();
     }
 
 

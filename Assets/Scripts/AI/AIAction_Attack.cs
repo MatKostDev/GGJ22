@@ -10,16 +10,11 @@ public class AIAction_Attack : AIAction
 
     [Header("References")]
     [SerializeField] WeaponManager weaponManager = null;
+    [SerializeField] NavMeshAgent agent = null;
 
     public override void SelectAction()
     {
-        //var dir = AISensor.DirectionToPlayer(transform);
-        //dir = Vector3.Lerp(dir, dir + player.GetComponent<Rigidbody>().velocity, AIBlackboard.RandomFloatHelper(aimLeading));
-//
-        //var newRotation = Quaternion.LookRotation(dir.normalized);
-//
-        //AIBlackboard.RotationHelper(weaponManager.transform.rotation, newRotation, weaponManager.transform, turnSpeedWhileStandingStill * 2.0f);
-
+        agent.SetDestination(transform.position);
         if (weaponManager.CanPrimaryAttack())
             weaponManager.OnPrimaryWeapon();
 
