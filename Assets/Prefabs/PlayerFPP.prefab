@@ -721,7 +721,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  deathPlaneHeight: -120
+  deathPlaneHeight: -110
   mouseSens: 1
   minMouseSens: 0.1
   maxMouseSens: 20

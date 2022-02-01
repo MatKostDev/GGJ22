@@ -191,7 +191,7 @@ public class GrappleHook : MonoBehaviour
 
         var newParticles = Instantiate(grappleHitParticles, m_tetherPoint, Quaternion.LookRotation(m_grappleRayHit.normal));
 
-        Color    hitColor    = Color.cyan;
+        Color    hitColor    = Color.white;
         Material hitMaterial = m_grappleRayHit.collider.gameObject.GetComponent<Renderer>().material;
         if (hitMaterial.HasProperty("_LineColor"))
         {

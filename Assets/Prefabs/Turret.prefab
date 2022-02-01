@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3406068693658651861}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: FMOD Emitters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2360076850184806610}
   - component: {fileID: 8032178330212845460}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Turret Place
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3488077300361214197}
   - component: {fileID: 530096597042347397}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Turret Pick Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7394687808410223554}
   - component: {fileID: 4332816989867499055}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Turret Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1744541189595457579}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6526222734999943604}
   - component: {fileID: 5331998961183407660}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Turret Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 4865530334376465905}
   - component: {fileID: 6180924501633070981}
   - component: {fileID: 8956806712178981151}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 3582385607526242412}
   - component: {fileID: 6919170150302430011}
   - component: {fileID: 8339099340023157563}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ Transform:
   m_LocalScale: {x: 6.000356, y: 7.1193967, z: 6.000355}
   m_Children: []
   m_Father: {fileID: 5462568304759996558}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6919170150302430011
 MeshFilter:
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 5462568303409325003}
   - component: {fileID: 5462568303409325004}
   - component: {fileID: 5462568303409325006}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: TurretBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ Transform:
   m_Children:
   - {fileID: 5462568304940770931}
   m_Father: {fileID: 5462568304759996558}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &5462568303409325001
 MonoBehaviour:
@@ -1489,7 +1489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5462568304128129946}
   - component: {fileID: 5462568304128129947}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Turret
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -1543,7 +1543,7 @@ GameObject:
   - component: {fileID: 5462568304427568787}
   - component: {fileID: 5462568304427568789}
   - component: {fileID: 5462568304427568788}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: EnemyDetection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5462568304759996558}
   - component: {fileID: 5462568304759996557}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: BarrelRotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1633,8 +1633,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.36100006, z: 0}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_Children:
-  - {fileID: 5462568303409325005}
   - {fileID: 3582385607526242412}
+  - {fileID: 5462568303409325005}
   m_Father: {fileID: 5462568304905796610}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 5462568304905796608}
   - component: {fileID: 5462568304905796609}
   - component: {fileID: 5462568304905796633}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: TurretObject
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -3613,7 +3613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5462568304940770931}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Bullet Emitter Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3643,7 +3643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5462568304983680759}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: CastPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3674,7 +3674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7201529784964092813}
   - component: {fileID: 2783517665109804351}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Turret Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3735,6 +3735,10 @@ PrefabInstance:
     - target: {fileID: 5056221833896710186, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Name
       value: Debug Canvas (Map Icon)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056221833896710186, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5056221833896710187, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Pivot.x
@@ -3840,6 +3844,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5056221834058711618, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109264, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_Color.b
       value: 0.8867924
@@ -3856,6 +3864,10 @@ PrefabInstance:
       propertyPath: unit
       value: 
       objectReference: {fileID: 5462568304128129947}
+    - target: {fileID: 5056221835089109276, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 5056221835089109277, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.23
