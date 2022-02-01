@@ -6,6 +6,8 @@ using UnityEngine;
 //if the underlying circumstances of the design change, I will
 //have to go back and refactor, but for a first attempt im quite
 //proud
+
+//NOTE: MAKE MORE ACCESSIBLE TO POLYMORPHISM
 public class AIBlackboard : MonoBehaviour
 {
     [SerializeField] Vector2 timeBetweenDecisions = Vector2.zero;

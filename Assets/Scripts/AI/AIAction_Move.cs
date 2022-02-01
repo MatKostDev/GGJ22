@@ -5,26 +5,21 @@ using UnityEngine.AI;
 
 public class AIAction_Move : AIAction
 {
-    [SerializeField] int sign = 1;
-    [SerializeField] Vector2 movementRange = new Vector2(5.0f, 10.0f);
 
+    public Vector3 destination = Vector3.zero;
     [Header("References")]
     [SerializeField] NavMeshAgent agent = null;
+    [SerializeField] AISensor_Manual manualSensor = null;
     // Start is called before the first frame update
 
     //come back to this since movement will work different for units
     public override void SelectAction()
     {
-        //NavMeshHit hit;
-        //var dist = AIBlackboard.RandomFloatHelper(movementRange);
-        //var destination = transform.position + AISensor.DirectionToPlayer(transform).normalized * sign * dist;
-        //if (agent.remainingDistance <= agent.stoppingDistance)
-        //{
-        //    if (!NavMesh.SamplePosition(destination, out hit, dist, NavMesh.AllAreas))
-        //        destination = transform.position - AISensor.DirectionToPlayer(transform).normalized * sign * dist;
-        //    agent.SetDestination(destination);
-        //    agent.updateRotation = true;
-        //}
+        if ((transform.position - destination).magnitude <= 1.0f)
+            manualSensor.ResetSensor();
+        agent.updateRotation = true;
+        agent.SetDestination(destination);
+
         base.SelectAction();
     }
 }

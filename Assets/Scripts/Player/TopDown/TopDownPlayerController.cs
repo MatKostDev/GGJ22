@@ -75,7 +75,7 @@ public class TopDownPlayerController : PlayerControlType
         var position = RaycastHelper();
         if (position.magnitude > 0.0f)
         {
-            unit.SetDestination(position);
+            unit.SetDestination(position,!Input.GetKey(KeyCode.LeftShift));
             OnSetUnitDestination.Invoke();
         }
         return true;
@@ -89,7 +89,7 @@ public class TopDownPlayerController : PlayerControlType
         var position = RaycastHelper();
         if (position.magnitude > 0.0f)
         {
-            squad.SetDestination(position);
+            squad.SetDestination(position,!Input.GetKey(KeyCode.LeftShift));
             OnSetUnitDestination.Invoke();
         }
         return true;

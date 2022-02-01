@@ -287,6 +287,7 @@ Transform:
   m_Children:
   - {fileID: 7446588901838501166}
   - {fileID: 7446588902989645738}
+  - {fileID: 1236838043640613567}
   - {fileID: 3521625622534249564}
   - {fileID: 6148514359328300903}
   - {fileID: 588114186091531155}
@@ -371,6 +372,7 @@ MonoBehaviour:
   timeBetweenDecisions: {x: 0, y: 0}
   deciders:
   - {fileID: 7446588902989645735}
+  - {fileID: 4239272940821917055}
 --- !u!195 &7446588902035406245
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -409,7 +411,10 @@ MonoBehaviour:
   canMove: 1
   health: {fileID: 7446588902035406244}
   gun: {fileID: 7446588902025876110}
-  agent: {fileID: 7446588902035406245}
+  manualSensor: {fileID: 785035034112419157}
+  move: {fileID: 6024824036999937114}
+  moveDecider: {fileID: 4239272940821917055}
+  attackDecider: {fileID: 7446588902989645735}
 --- !u!114 &7446588902035406244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +586,7 @@ MonoBehaviour:
   aimLeading: {x: 0.15, y: 0.15}
   turnSpeedWhileStandingStill: 2.5
   weaponManager: {fileID: 7446588901838501167}
+  agent: {fileID: 7446588902035406245}
 --- !u!114 &7446588902989645741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b9dcbf0ef2fa9345811716895df6f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideAllActions: 0
+  overrideAllActions: 1
   decisionName: 
   sensors:
   - {fileID: 7446588902989645737}
@@ -777,7 +783,7 @@ Transform:
   - {fileID: 3175920354676879908}
   - {fileID: 7194348762589838571}
   m_Father: {fileID: 7446588902035406242}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8997680997029400055
 GameObject:
@@ -840,6 +846,93 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!1 &9084354746425559551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1236838043640613567}
+  - component: {fileID: 6024824036999937114}
+  - component: {fileID: 785035034112419157}
+  - component: {fileID: 4239272940821917055}
+  m_Layer: 17
+  m_Name: Move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1236838043640613567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084354746425559551}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7446588902035406242}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6024824036999937114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084354746425559551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fa2a24b6d0832449c7cee33de9a668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: 
+  OnActionSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnActionDeselected:
+    m_PersistentCalls:
+      m_Calls: []
+  destination: {x: 0, y: 0, z: 0}
+  agent: {fileID: 7446588902035406245}
+  manualSensor: {fileID: 785035034112419157}
+--- !u!114 &785035034112419157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084354746425559551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe926f7ab9481f48849a89bacd6dfa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensorName: 
+  tripped: 0
+--- !u!114 &4239272940821917055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084354746425559551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9dcbf0ef2fa9345811716895df6f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideAllActions: 0
+  decisionName: 
+  sensors:
+  - {fileID: 785035034112419157}
+  acitons:
+  - {fileID: 6024824036999937114}
 --- !u!1001 &1126990351859969144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,7 +942,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 368110f5fb426f944bf833c8347d73b9, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 368110f5fb426f944bf833c8347d73b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -927,7 +1020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056221833896710187, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5056221833896710187, guid: 6dec370e6ead0d943a2f4ee46ae1b76c, type: 3}
       propertyPath: m_AnchorMax.x

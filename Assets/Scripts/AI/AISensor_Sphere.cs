@@ -10,12 +10,12 @@ public class AISensor_Sphere : AISensor
 
     private void Update()
     {
-        if (_sensedObject != null && !_sensedObject.activeSelf)
+        if (_sensedObject != null && !_sensedObject.activeInHierarchy)
             _sensedObject = null;
     }
     public override bool Sense()
     {
-        if (_sensedObject != null)
+        if (_sensedObject)
             return SetSenseTime();
         return false;
     }
