@@ -36,6 +36,7 @@ public class Unit : MonoBehaviour
     {
         IEnumerator Wait()
         {
+            gameObject.SetActive(false);
             yield return new WaitForSeconds(0.75f);
             Destroy(gameObject);
         }

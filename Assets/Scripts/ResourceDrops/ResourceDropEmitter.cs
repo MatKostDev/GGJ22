@@ -10,7 +10,7 @@ public class ResourceDropEmitter : MonoBehaviour
     [SerializeField]
     int numDropsToEmit = 10;
 
-    public void EmitLoot()
+    public void EmitLoot(bool a_destroyAfterEmit = true)
     {
         for (int i = 0; i < numDropsToEmit; i++)
         {
@@ -19,6 +19,9 @@ public class ResourceDropEmitter : MonoBehaviour
             newDrop.OnEmitted();
         }
 
-        Destroy(this);
+        if (a_destroyAfterEmit)
+        {
+            Destroy(this);
+        }
     }
 }
