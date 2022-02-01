@@ -35,6 +35,9 @@ public class Shop : MonoBehaviour
     float m_turretTimer;
     float m_unitTimer;
 
+    [Header("References")]
+    [SerializeField] SquadSpawner squadSpawner = null;
+
     void Awake()
     {
         turretsCostText.text = turretsCost.ToString();
@@ -69,13 +72,13 @@ public class Shop : MonoBehaviour
 
     public void TryBuyUnits()
     {
-        if (m_resourceManager.CurrentAmount < turretsCost || m_unitTimer > 0.001f)
+        if (m_resourceManager.CurrentAmount < unitsCost || m_unitTimer > 0.001f)
         {
             return;
         }
 
         m_resourceManager.SpendResources(unitsCost);
-
+        squadSpawner.SpawnSquad();
         m_unitTimer = unitCooldown;
 
         unitCooldownImage.fillAmount = 1f;

@@ -12,6 +12,7 @@ public class AIAction_RotateTowardsPlayer : AIAction
     [SerializeField] NavMeshAgent agent = null;
     [SerializeField] Transform parentTransform = null;
     [SerializeField] AISensor_Sphere sphere = null;
+    [SerializeField] Transform emitterPoint = null;
 
     public override void SelectAction()
     {
@@ -26,6 +27,11 @@ public class AIAction_RotateTowardsPlayer : AIAction
         var newRotation = Quaternion.LookRotation(dir.normalized);
 
         AIBlackboard.RotationHelper(parentTransform.rotation, newRotation, parentTransform, turnSpeedWhileStandingStill);
+
+        if (emitterPoint)
+        {
+            emitterPoint.LookAt(sensed.transform.position);
+        }
 
         base.SelectAction();
     }

@@ -13,17 +13,28 @@ public class Unit : MonoBehaviour
     public Gun gun;
     [SerializeField] NavMeshAgent agent = null;
 
-
     public void SetDestination(Vector3 dest)
     {
-        if (!canMove)
+        if (!canMove || !agent)
             return;
+        agent.updateRotation = true;
         agent.SetDestination(dest);
     }
+
 
     public bool CanMove()
     {
         return canMove;
+    }
+
+    public void OnDie()
+    {
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(0.75f);
+            Destroy(gameObject);
+        }
+        StartCoroutine(Wait());
     }
 
 }

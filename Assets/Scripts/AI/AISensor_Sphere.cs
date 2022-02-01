@@ -27,7 +27,6 @@ public class AISensor_Sphere : AISensor
         if (_sensedObject == null || (transform.position - _sensedObject.transform.position).magnitude > (transform.position - other.transform.position).magnitude)
         {
             _sensedObject = other.gameObject;
-            Debug.Log(_sensedObject.name);
         }
     }
 
