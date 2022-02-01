@@ -8678,7 +8678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5462568304128129946, guid: 9b7da95f2e4298941b19f835c0c37325, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5462568304128129946, guid: 9b7da95f2e4298941b19f835c0c37325, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8686,7 +8686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5462568304128129946, guid: 9b7da95f2e4298941b19f835c0c37325, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5462568304128129946, guid: 9b7da95f2e4298941b19f835c0c37325, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18514,7 +18514,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-132646
+  m_Name: pb_Mesh121756
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21125,7 +21125,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-132682
+  m_Name: pb_Mesh121804
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21745,7 +21745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretsCostText: {fileID: 1031536198}
   unitsCostText: {fileID: 2082375942}
-  turretsCost: 15
+  turretsCost: 10
   unitsCost: 30
   turretCooldownImage: {fileID: 1072504129}
   unitCooldownImage: {fileID: 898888055}
