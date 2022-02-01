@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1310946600159906783}
   - component: {fileID: 2911046804171931110}
   m_Layer: 0
-  m_Name: EBullet
+  m_Name: BulletEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3174253494259242737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 35.5, y: 4.111, z: 3.28}
-  m_LocalScale: {x: 0.14941502, y: 0.14941502, z: 0.14941502}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

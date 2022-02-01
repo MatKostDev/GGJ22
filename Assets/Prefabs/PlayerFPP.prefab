@@ -721,7 +721,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  deathPlaneHeight: -120
+  deathPlaneHeight: -110
   mouseSens: 1
   minMouseSens: 0.1
   maxMouseSens: 20
@@ -742,7 +742,7 @@ MonoBehaviour:
   rayCheckDistance: 4
   layersToCheck:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 524289
 --- !u!114 &7324549247599481452
 MonoBehaviour:
   m_ObjectHideFlags: 0

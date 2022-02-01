@@ -13,14 +13,6 @@ public class TurretSpawner : Singleton<TurretSpawner>
     int m_spawnNumber  = 1;
     int m_multiplySign = 1;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            SpawnTurret();
-        }
-    }
-
     public void RespawnExistingTurret(Transform a_moveTarget)
     {
         a_moveTarget.position = GetSpawnPosition();
