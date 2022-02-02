@@ -13355,7 +13355,7 @@ MonoBehaviour:
   acitons:
   - {fileID: 951163773}
   sensingTimeRange: {x: 0, y: 0}
-  actionTimeRange: {x: 30, y: 30}
+  actionTimeRange: {x: 40, y: 40}
 --- !u!114 &951163773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13470,7 +13470,7 @@ MonoBehaviour:
   acitons:
   - {fileID: 952392920}
   sensingTimeRange: {x: 0, y: 0}
-  actionTimeRange: {x: 9, y: 9}
+  actionTimeRange: {x: 11, y: 11}
 --- !u!114 &952392920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20586,7 +20586,7 @@ MonoBehaviour:
   turretsCostText: {fileID: 1031536198}
   unitsCostText: {fileID: 2082375942}
   turretsCost: 10
-  unitsCost: 30
+  unitsCost: 25
   turretCooldownImage: {fileID: 1072504129}
   unitCooldownImage: {fileID: 898888055}
   turretCooldown: 1
