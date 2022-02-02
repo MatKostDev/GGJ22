@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropPrefab: {fileID: 4311501926434618549, guid: 79133b3516a6dd943856220224081ad1, type: 3}
-  numDropsToEmit: 5
+  numDropsToEmit: 7
 --- !u!1 &7446588902989645732
 GameObject:
   m_ObjectHideFlags: 0

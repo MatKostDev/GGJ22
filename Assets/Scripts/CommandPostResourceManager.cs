@@ -35,7 +35,6 @@ public class CommandPostResourceManager : MonoBehaviour
         if (m_dropCountdown < 0f)
         {
             int randomIndex = Random.Range(0, m_dropEmitters.Length);
-            Debug.Log(randomIndex);
             m_dropEmitters[randomIndex].EmitLoot(false);
 
             m_dropCountdown = dropCooldown;

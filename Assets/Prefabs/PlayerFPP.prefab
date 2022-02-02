@@ -671,11 +671,11 @@ MonoBehaviour:
   groundAccelerationRate: 190
   groundDecelerationRate: 80
   groundFrictionStrength: 1.7
-  groundTargetMovementSpeed: 15
+  groundTargetMovementSpeed: 17.5
   airAccelerationRate: 110
   airDecelerationRate: 30
   airFrictionStrength: 0.02
-  airTargetMovementSpeed: 14.5
+  airTargetMovementSpeed: 17
   jumpHeight: 2.3
   gravityStrength: 40
   terminalDownVelocity: -60

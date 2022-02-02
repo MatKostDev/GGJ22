@@ -13,7 +13,7 @@ public class WeaponDropEmitter : MonoBehaviour
             return;
         int chance = (int)(1.0f / dropChance);
         chance = Random.Range(1,101) % chance;
-        Debug.Log(chance);
+        //Debug.Log(chance);
         if(chance != 0)
             return;
         GameObject w = WeaponDropManager.GetSpawnedWeapon();
