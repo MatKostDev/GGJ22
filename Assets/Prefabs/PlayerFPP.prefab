@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58695715613f90d409586460d767d0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayCheckDistance: 5.5
+  rayCheckDistance: 6
   layersToCheck:
     serializedVersion: 2
     m_Bits: 524289
