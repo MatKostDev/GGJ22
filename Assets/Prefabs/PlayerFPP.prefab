@@ -668,12 +668,12 @@ MonoBehaviour:
         m_CallState: 2
   maxSpeedMultiple: 2.5
   momentumShiftWhenTurningFactor: 0.8
-  groundAccelerationRate: 190
-  groundDecelerationRate: 80
-  groundFrictionStrength: 1.7
+  groundAccelerationRate: 210
+  groundDecelerationRate: 100
+  groundFrictionStrength: 1.9
   groundTargetMovementSpeed: 17.5
-  airAccelerationRate: 110
-  airDecelerationRate: 30
+  airAccelerationRate: 125
+  airDecelerationRate: 40
   airFrictionStrength: 0.02
   airTargetMovementSpeed: 17
   jumpHeight: 2.3
@@ -1233,5 +1233,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}

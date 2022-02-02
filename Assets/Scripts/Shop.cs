@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
@@ -68,6 +69,8 @@ public class Shop : MonoBehaviour
         m_turretTimer = turretCooldown;
 
         turretCooldownImage.fillAmount = 1f;
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void TryBuyUnits()
@@ -82,5 +85,7 @@ public class Shop : MonoBehaviour
         m_unitTimer = unitCooldown;
 
         unitCooldownImage.fillAmount = 1f;
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }
